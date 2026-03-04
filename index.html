@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaFlow · fluent in feeling</title>
+
+<link rel="stylesheet" href="css/style.css">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts for better typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- AOS (Animate on Scroll) - lightweight -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+ 
+</head>
+<body>
+
+<!-- ===== REFINED NAVBAR ===== -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-premium" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-chat-dots-fill me-2" style="color: #4a6fa5;"></i>
+      lingualume
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="box-shadow: none;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="method.html">Method</a></li>
+        <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="registration.html" class="btn btn-nav-cta"><i class="bi bi-person-check me-2"></i>Start free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== ELEVATED HERO CAROUSEL (3 slides, pro content) ===== -->
+<div class="hero-wrapper">
+  <div id="premiumLangCarousel" class="carousel slide carousel-fade carousel-modern" data-bs-ride="carousel" data-bs-interval="6000" data-bs-pause="false">
+    <!-- indicators refined -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#premiumLangCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#premiumLangCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#premiumLangCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+      <!-- SLIDE 1 — connection first -->
+      <div class="carousel-item active slide-1">
+        <div class="carousel-caption-premium">
+          <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <span class="language-badge"><i class="bi bi-globe2 me-2"></i>24 languages · 80k+ learners</span>
+            <h1 class="headline-xl">Speak <span class="gradient-text">without fear,</span><br>connect without borders</h1>
+            <p class="description">From English to Mandarin, our conversational method builds fluency naturally. AI-powered feedback + real human coaches.</p>
+            <div class="btn-group-premium">
+              <a href="#" class="btn-premium-primary"><i class="bi bi-play-fill"></i> Explore lessons</a>
+              <a href="#" class="btn-premium-secondary"><i class="bi bi-chat-heart"></i> Get started free</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2 — french / romance -->
+      <div class="carousel-item slide-2">
+        <div class="carousel-caption-premium">
+          <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <span class="language-badge"><i class="bi bi-mic me-2"></i>Prononciation · culture · fluidité</span>
+            <h1 class="headline-xl">Parlez <span class="gradient-text">avec âme</span><br>French, Italian & beyond</h1>
+            <p class="description">Master romance languages through immersive storytelling, not just grammar drills. Your journey starts with a whisper.</p>
+            <div class="btn-group-premium">
+              <a href="#" class="btn-premium-primary"><i class="bi bi-soundwave"></i> Try audio lesson</a>
+              <a href="#" class="btn-premium-secondary"><i class="bi bi-calendar-heart"></i> Free trial</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3 — asian / business & soul -->
+      <div class="carousel-item slide-3">
+        <div class="carousel-caption-premium">
+          <div class="container" data-aos="fade-up" data-aos-duration="1000">
+            <span class="language-badge"><i class="bi bi-tree me-2"></i> 日本語 · 中文 · 한국어</span>
+            <h1 class="headline-xl">Unlock <span class="gradient-text">East Asia,</span><br>unlock your future</h1>
+            <p class="description">Mandarin, Japanese, Korean — from beginner to business fluent. Cultural context, real conversations, rapid progress.</p>
+            <div class="btn-group-premium">
+              <a href="#" class="btn-premium-primary"><i class="bi bi-compass"></i> View curriculum</a>
+              <a href="#" class="btn-premium-secondary"><i class="bi bi-suit-heart"></i> Start 7 days free</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- controls subtle -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#premiumLangCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#premiumLangCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+
+    <!-- floating micro-stat (UX touch) -->
+    <div class="floating-stats">
+      <i class="bi bi-star-fill me-2" style="color: #ffd966;"></i> 4.96 · 12,450+ fluent graduates
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT SECTION - 4 LAYOUT PICTURES / IMAGE RIGHT & TEXT LEFT ===== -->
+<section class="about-section">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <!-- Left column: text content -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+        <span class="about-badge"><i class="bi bi-stars me-2"></i>Why LinguaLume</span>
+        <h2 class="about-title">More than <span class="gradient-text">language,</span><br>we build connection</h2>
+        <p class="about-text">We believe language learning should feel like opening a door, not climbing a wall. Our method combines neuroscience, cultural immersion, and human connection to create fluency that sticks.</p>
+        
+        <ul class="about-features">
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span><strong>AI speech analysis</strong> with real-time pronunciation feedback</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span><strong>Native conversation partners</strong> from 24 countries</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span><strong>Cultural context</strong> woven into every lesson</span>
+          </li>
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            <span><strong>Flexible pacing</strong> that adapts to your life</span>
+          </li>
+        </ul>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Languages</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">80k+</div>
+            <div class="stat-label">Active learners</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">96%</div>
+            <div class="stat-label">Speak confidently</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right column: 4 layout pictures grid -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+        <div class="about-image-grid">
+          <!-- Image 1 - top left (main) -->
+          <div class="grid-item grid-item-1">
+            <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?q=80&w=2070&auto=format&fit=crop" alt="Students learning together">
+          </div>
+          <!-- Image 2 - top right -->
+          <div class="grid-item grid-item-2">
+            <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2049&auto=format&fit=crop" alt="Online language session">
+          </div>
+          <!-- Image 3 - bottom left -->
+          <div class="grid-item grid-item-3">
+            <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="Cultural exchange">
+          </div>
+          <!-- Image 4 - bottom right (main) -->
+          <div class="grid-item grid-item-4">
+            <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop" alt="One-on-one coaching">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== COURSES SECTION - 21 languages (3 rows, 7 columns each = 21) ===== -->
+<section class="courses-section">
+  <div class="container">
+    <div class="courses-header" data-aos="fade-up">
+      <span class="courses-badge"><i class="bi bi-grid-3x3-gap-fill me-2"></i>21 Languages · 1 Platform</span>
+      <h2 class="courses-title">Find your <span class="gradient-text">language</span></h2>
+      <p class="courses-subtitle">From the most spoken to the beautifully niche — start speaking any of 21 languages today</p>
+    </div>
+
+    <!-- Row 1: 7 languages -->
+    <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+      <!-- English -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=2070&auto=format&fit=crop" alt="English">
+          </div>
+          <div class="card-content">
+            <div class="language-name">English <span>🇬🇧</span></div>
+            <div class="native-name">Global communication</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>Beginner to Fluent</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 124 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Spanish -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2070&auto=format&fit=crop" alt="Spanish">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Español <span>🇪🇸</span></div>
+            <div class="native-name">Spanish · 20 countries</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - C2</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 156 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- French -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop" alt="French">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Français <span>🇫🇷</span></div>
+            <div class="native-name">French · Romance</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - C1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 142 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- German -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070&auto=format&fit=crop" alt="German">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Deutsch <span>🇩🇪</span></div>
+            <div class="native-name">German · Business</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B2</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 118 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: 7 languages -->
+    <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="200">
+      <!-- Italian -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=2080&auto=format&fit=crop" alt="Italian">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Italiano <span>🇮🇹</span></div>
+            <div class="native-name">Italian · Culture</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - C1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 132 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Portuguese - FIXED IMAGE URL -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1483729557573-9b83e8f2c6cc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Portuguese">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Português <span>🇵🇹</span></div>
+            <div class="native-name">Portuguese · Brazil/EU</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B2</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 128 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Russian -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=2070&auto=format&fit=crop" alt="Russian">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Русский <span>🇷🇺</span></div>
+            <div class="native-name">Russian · Cyrillic</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 114 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Japanese -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070&auto=format&fit=crop" alt="Japanese">
+          </div>
+          <div class="card-content">
+            <div class="language-name">日本語 <span>🇯🇵</span></div>
+            <div class="native-name">Japanese · Kanji</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>N5 - N1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 168 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: 7 languages (21 total) -->
+    <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="300">
+      <!-- Mandarin -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop" alt="Mandarin">
+          </div>
+          <div class="card-content">
+            <div class="language-name">中文 <span>🇨🇳</span></div>
+            <div class="native-name">Mandarin · Tones</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>HSK 1-6</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 192 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Korean -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=2070&auto=format&fit=crop" alt="Korean">
+          </div>
+          <div class="card-content">
+            <div class="language-name">한국어 <span>🇰🇷</span></div>
+            <div class="native-name">Korean · Hangul</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>TOPIK 1-6</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 156 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arabic -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1526491109672-74740652b963?q=80&w=2070&auto=format&fit=crop" alt="Arabic">
+          </div>
+          <div class="card-content">
+            <div class="language-name">العربية <span>🇸🇦</span></div>
+            <div class="native-name">Arabic · Script</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 136 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hindi -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2071&auto=format&fit=crop" alt="Hindi">
+          </div>
+          <div class="card-content">
+            <div class="language-name">हिन्दी <span>🇮🇳</span></div>
+            <div class="native-name">Hindi · Devanagari</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B2</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 122 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Continue with more languages to reach 21 (adding 3 more in this row) -->
+      <!-- Dutch - FIXED IMAGE URL -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Dutch">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Nederlands <span>🇳🇱</span></div>
+            <div class="native-name">Dutch · Lowlands</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 98 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Swedish - FIXED IMAGE URL -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1519074069444-1ba4fff66d16?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Swedish">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Svenska <span>🇸🇪</span></div>
+            <div class="native-name">Swedish · Nordic</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B2</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 108 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Greek - FIXED IMAGE URL -->
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1603565816030-6b389eeb23cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Greek">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Ελληνικά <span>🇬🇷</span></div>
+            <div class="native-name">Greek · Alphabet</div>
+            <div class="language-level">
+              <i class="bi bi-bar-chart-fill"></i>
+              <span>A1 - B1</span>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-play-circle"></i> 116 lessons</span>
+              <a href="#" class="start-learning">Start <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- View all button -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn-premium-primary" style="background: linear-gradient(135deg, #4a90e2, #7b68ee); color: white; display: inline-flex; padding: 1rem 3rem;">
+        <i class="bi bi-search me-2"></i> Explore all 21 languages
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== LEARNING METHOD & PROMO SECTION ===== -->
+<section class="method-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- Left column: method badge and description -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+        <span class="method-badge"><i class="bi bi-lightbulb me-2"></i>How you'll learn</span>
+        <h2 class="method-title">The <span class="gradient-text">LinguaFlow</span> method</h2>
+        <p class="method-subtitle">Science-backed, human-centered, and designed for real conversations — not just textbook exercises.</p>
+        
+        <!-- Method steps (vertical timeline style) -->
+        <div class="method-steps">
+          <!-- Step 1 -->
+          <div class="method-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h4>Immerse first, grammar later</h4>
+              <p>You learn the way children do — by listening, speaking, and absorbing patterns before diving into rules.</p>
+            </div>
+          </div>
+          
+          <!-- Step 2 -->
+          <div class="method-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h4>AI-powered pronunciation coach</h4>
+              <p>Real-time feedback on your accent, intonation, and fluency — like having a teacher in your pocket.</p>
+            </div>
+          </div>
+          
+          <!-- Step 3 -->
+          <div class="method-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h4>Live conversation sessions</h4>
+              <p>Weekly 1-on-1 video calls with native speakers from our global community. Real people, real accents.</p>
+            </div>
+          </div>
+          
+          <!-- Step 4 -->
+          <div class="method-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h4>Cultural context woven in</h4>
+              <p>Learn the jokes, the gestures, the idioms — because language lives in culture, not in dictionaries.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Trust badges / partner logos (optional) -->
+        <div class="trust-badges">
+          <div class="trust-item">
+            <i class="bi bi-award-fill"></i>
+            <span>Certified by CEFR</span>
+          </div>
+          <div class="trust-item">
+            <i class="bi bi-building"></i>
+            <span>Used by 200+ schools</span>
+          </div>
+          <div class="trust-item">
+            <i class="bi bi-star-fill"></i>
+            <span>4.96 · 12k+ reviews</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right column: promo card & stats -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+        <div class="promo-card">
+          <!-- Promo badge -->
+          <div class="promo-badge">
+            <i class="bi bi-megaphone-fill"></i> Limited offer · 7 days free
+          </div>
+          
+          <!-- Main promo content -->
+          <h3 class="promo-title">Start speaking from <span class="gradient-text">day one</span></h3>
+          <p class="promo-text">Join 80,000+ learners who already unlocked a new world. Full access to all 21 languages, AI coach, and live sessions.</p>
+          
+          <!-- Pricing pill -->
+          <div class="pricing-pill">
+            <span class="old-price">$29.99</span>
+            <span class="new-price">$12.99</span>
+            <span class="period">/month</span>
+          </div>
+          
+          <!-- CTA buttons -->
+          <div class="promo-actions">
+            <a href="#" class="btn-promo-primary"><i class="bi bi-rocket-takeoff-fill me-2"></i>Claim 7 days free</a>
+            <a href="#" class="btn-promo-secondary"><i class="bi bi-play-circle me-2"></i>Watch method demo</a>
+          </div>
+          
+          <!-- Money-back guarantee -->
+          <div class="guarantee">
+            <i class="bi bi-shield-check"></i>
+            <span>30-day money-back guarantee · No credit card required for trial</span>
+          </div>
+          
+          <!-- Mini stats row inside promo -->
+          <div class="promo-stats">
+            <div class="promo-stat-item">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label">Access</div>
+            </div>
+            <div class="promo-stat-item">
+              <div class="stat-value">21</div>
+              <div class="stat-label">Languages</div>
+            </div>
+            <div class="promo-stat-item">
+              <div class="stat-value">1:1</div>
+              <div class="stat-label">Coaching</div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Floating testimonial (decorative) -->
+        <div class="testimonial-float">
+          <img src="https://images.unsplash.com/photo-1494790108755-27193f48fb76?q=80&w=1974&auto=format&fit=crop" alt="Student">
+          <div class="testimonial-text">
+            <i class="bi bi-quote"></i>
+            <p>I tried apps before, but this method actually made me speak. After 3 months I had my first real conversation in Spanish!</p>
+            <strong>— Maria, 4 months fluent</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== PROMO FEATURES SECTION ===== -->
+<section class="promo-features-section">
+  <div class="container">
+    <!-- Section header -->
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="features-badge"><i class="bi bi-stars me-2"></i>Everything included</span>
+      <h2 class="features-title">One subscription.<br><span class="gradient-text">Unlimited possibilities.</span></h2>
+      <p class="features-subtitle">Get full access to all 21 languages, AI tools, and human coaching — no hidden fees, no tiers.</p>
+    </div>
+
+    <!-- Features grid - 3 rows, 4 columns = 12 features -->
+    <div class="features-grid">
+      <!-- Row 1: 4 features -->
+      <div class="row g-4" data-aos="fade-up" data-aos-delay="100">
+        <!-- Feature 1 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-chat-dots-fill"></i>
+            </div>
+            <h3 class="feature-title">Live conversation <br>sessions</h3>
+            <p class="feature-description">Weekly 1-on-1 video calls with native speakers from 24 countries. Real people, real accents.</p>
+          </div>
+        </div>
+        <!-- Feature 2 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-mic-fill"></i>
+            </div>
+            <h3 class="feature-title">AI pronunciation <br>coach</h3>
+            <p class="feature-description">Real-time feedback on your accent, intonation, and fluency — like a teacher in your pocket.</p>
+          </div>
+        </div>
+        <!-- Feature 3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-journal-bookmark-fill"></i>
+            </div>
+            <h3 class="feature-title">21 languages <br>in one app</h3>
+            <p class="feature-description">From English to Swahili, Mandarin to Arabic — switch anytime, no extra cost.</p>
+          </div>
+        </div>
+        <!-- Feature 4 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-bar-chart-fill"></i>
+            </div>
+            <h3 class="feature-title">Progress tracking <br>& analytics</h3>
+            <p class="feature-description">See your fluency grow with detailed insights, strengths, and areas to improve.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: 4 features -->
+      <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="200">
+        <!-- Feature 5 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-translate"></i>
+            </div>
+            <h3 class="feature-title">Cultural context <br>modules</h3>
+            <p class="feature-description">Learn the jokes, gestures, and idioms — because language lives in culture.</p>
+          </div>
+        </div>
+        <!-- Feature 6 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-file-earmark-text-fill"></i>
+            </div>
+            <h3 class="feature-title">CEFR-certified <br>curriculum</h3>
+            <p class="feature-description">Structured from A1 to C2 with official certification paths for each language.</p>
+          </div>
+        </div>
+        <!-- Feature 7 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-clock-fill"></i>
+            </div>
+            <h3 class="feature-title">Flexible 5-min <br>lessons</h3>
+            <p class="feature-description">Short bursts or deep dives — learn on your schedule, online or offline.</p>
+          </div>
+        </div>
+        <!-- Feature 8 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-people-fill"></i>
+            </div>
+            <h3 class="feature-title">Community <br>events</h3>
+            <p class="feature-description">Weekly language cafes, culture nights, and group challenges with fellow learners.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 3: 4 features -->
+      <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="300">
+        <!-- Feature 9 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-pencil-fill"></i>
+            </div>
+            <h3 class="feature-title">Writing <br>corrections</h3>
+            <p class="feature-description">Submit texts and get feedback from native speakers within hours.</p>
+          </div>
+        </div>
+        <!-- Feature 10 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-headphones"></i>
+            </div>
+            <h3 class="feature-title">Immersive <br>audio lessons</h3>
+            <p class="feature-description">Learn while commuting, cooking, or walking — hands-free mode available.</p>
+          </div>
+        </div>
+        <!-- Feature 11 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-trophy-fill"></i>
+            </div>
+            <h3 class="feature-title">Gamified <br>challenges</h3>
+            <p class="feature-description">Earn badges, compete on leaderboards, and stay motivated with streaks.</p>
+          </div>
+        </div>
+        <!-- Feature 12 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="bi bi-infinity"></i>
+            </div>
+            <h3 class="feature-title">Unlimited <br>reviews</h3>
+            <p class="feature-description">Revisit any lesson, any time — no caps, no extra fees, ever.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom CTA banner -->
+    <div class="features-cta-banner" data-aos="fade-up" data-aos-delay="400">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h4 class="banner-title">Ready to unlock all 12 features?</h4>
+          <p class="banner-text">Start your 7-day free trial today — no credit card required.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="#" class="btn-banner-cta"><i class="bi bi-rocket-takeoff-fill me-2"></i>Claim free week</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== TESTIMONIALS SECTION ===== -->
+<section class="testimonials-section">
+  <div class="container">
+    <!-- Section header -->
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="testimonials-badge"><i class="bi bi-chat-quote-fill me-2"></i>Trusted by learners</span>
+      <h2 class="testimonials-title">Real stories from <span class="gradient-text">real speakers</span></h2>
+      <p class="testimonials-subtitle">Join 80,000+ students who found their voice in a new language.</p>
+    </div>
+
+    <!-- Featured testimonial card (large) -->
+    <div class="featured-testimonial" data-aos="fade-up" data-aos-delay="100">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-4">
+          <div class="featured-image">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop" alt="Maria Gonzalez">
+            <div class="featured-flags">
+              <span>🇪🇸</span>
+              <span>🇬🇧</span>
+              <span>🇫🇷</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="featured-content">
+            <i class="bi bi-quote featured-quote"></i>
+            <p class="featured-text">"I tried apps before, but LinguaFlow actually made me speak. The AI pronunciation coach caught mistakes I didn't even know I was making, and the live sessions with native speakers gave me real confidence. After 4 months, I had my first full conversation in Spanish with my boyfriend's family. Priceless."</p>
+            <div class="featured-author">
+              <strong>Maria Gonzalez</strong>
+              <span>Learned Spanish · 4 months to conversation</span>
+              <div class="author-rating">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial grid - 3 columns, 2 rows = 6 cards -->
+    <div class="testimonial-grid">
+      <!-- Row 1: 3 testimonials -->
+      <div class="row g-4" data-aos="fade-up" data-aos-delay="200">
+        <!-- Testimonial 1 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="James">
+              <div class="card-author">
+                <h4>James Chen</h4>
+                <p>Mandarin learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"The tones finally make sense! The visual feedback from the AI coach showed me exactly where my pronunciation was off. Now I can order dumplings without getting funny looks."</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇨🇳</span>
+              <span class="level">HSK 3 in 6 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" alt="Sophie">
+              <div class="card-author">
+                <h4>Sophie Dubois</h4>
+                <p>Japanese learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"I lived in Tokyo for 2 years but never got past konnichiwa. The cultural context modules taught me keigo (polite speech) and now I can email my clients respectfully."</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇯🇵</span>
+              <span class="level">N4 in 5 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="Marcus">
+              <div class="card-author">
+                <h4>Marcus Adebayo</h4>
+                <p>Portuguese learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"Moving to São Paulo for work was scary. The live conversation sessions prepared me for real Brazilian Portuguese — the slang, the speed, the warmth. Promoted within 3 months!"</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇧🇷</span>
+              <span class="level">B1 in 4 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Row 2: 3 testimonials -->
+      <div class="row g-4 mt-2" data-aos="fade-up" data-aos-delay="300">
+        <!-- Testimonial 4 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=1974&auto=format&fit=crop" alt="Yuki">
+              <div class="card-author">
+                <h4>Yuki Tanaka</h4>
+                <p>English learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"The AI speech analysis helped me fix my 'r' and 'l' pronunciation that I'd struggled with for years. My colleagues at the London office finally understand me on Zoom calls!"</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇬🇧</span>
+              <span class="level">IELTS 7.5</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1494790108755-27193f48fb76?q=80&w=1974&auto=format&fit=crop" alt="Elena">
+              <div class="card-author">
+                <h4>Elena Petrova</h4>
+                <p>Italian learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"I'm learning Italian because my nonna never taught my mom. The cultural modules helped me understand not just the words, but the stories behind them. Now I can cook with her recipes and know what they mean."</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇮🇹</span>
+              <span class="level">A2 in 3 months</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="col-lg-4 col-md-6">
+          <div class="testimonial-card">
+            <div class="card-header">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Ahmed">
+              <div class="card-author">
+                <h4>Ahmed Hassan</h4>
+                <p>French learner</p>
+              </div>
+              <div class="card-rating">5.0</div>
+            </div>
+            <div class="card-body">
+              <i class="bi bi-quote"></i>
+              <p>"The community events are gold. I joined a French conversation cafe every Thursday, and now those people are real friends. We're planning a trip to Lyon together!"</p>
+            </div>
+            <div class="card-footer">
+              <span class="flag">🇫🇷</span>
+              <span class="level">B1 in 6 months</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="testimonials-stats" data-aos="fade-up" data-aos-delay="400">
+      <div class="row g-4">
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <div class="stat-number">80k+</div>
+            <div class="stat-label">Active learners</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <div class="stat-number">4.96</div>
+            <div class="stat-label">App store rating</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Languages</div>
+          </div>
+        </div>
+        <div class="col-md-3 col-6">
+          <div class="stat-item">
+            <div class="stat-number">12k+</div>
+            <div class="stat-label">5-star reviews</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA mini -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn-testimonial-cta"><i class="bi bi-pencil-square me-2"></i>Write your own story — start free</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== APPLY TO TEACH SECTION ===== -->
+<section class="teach-section">
+  <div class="container">
+    <div class="row g-5 align-items-center">
+      <!-- Left column: text content -->
+      <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000">
+        <span class="teach-badge"><i class="bi bi-mortarboard-fill me-2"></i>Become an instructor</span>
+        <h2 class="teach-title">Share your language,<br><span class="gradient-text">change lives</span></h2>
+        <p class="teach-subtitle">Join 500+ native speakers from 40+ countries who teach on LinguaFlow. Set your own hours, work from anywhere, and make real connections.</p>
+        
+        <!-- Benefits list -->
+        <div class="teach-benefits">
+          <!-- Benefit 1 -->
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-wallet2"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Earn up to $40/hour</h4>
+              <p>Competitive pay with weekly payouts — you set your rate based on experience.</p>
+            </div>
+          </div>
+          
+          <!-- Benefit 2 -->
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-globe2"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Teach from anywhere</h4>
+              <p>All you need is stable internet and a passion for your language and culture.</p>
+            </div>
+          </div>
+          
+          <!-- Benefit 3 -->
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-calendar-check"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Flexible schedule</h4>
+              <p>Choose your hours, your students, and how many sessions per week.</p>
+            </div>
+          </div>
+          
+          <!-- Benefit 4 -->
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="bi bi-people"></i>
+            </div>
+            <div class="benefit-content">
+              <h4>Global community</h4>
+              <p>Join teacher meetups, share resources, and grow with fellow instructors.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Teacher stats -->
+        <div class="teacher-stats">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Active teachers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.98</div>
+            <div class="stat-label">Teacher rating</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right column: application form -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000">
+        <div class="teach-form-card">
+          <h3 class="form-title">Apply to teach</h3>
+          <p class="form-subtitle">Fill out the form below — we'll get back to you within 48 hours.</p>
+          
+          <form class="teach-form">
+            <!-- Name field -->
+            <div class="form-group">
+              <label for="teacherName"><i class="bi bi-person"></i> Full name</label>
+              <input type="text" class="form-control" id="teacherName" placeholder="e.g. Maria Garcia" required>
+            </div>
+            
+            <!-- Email field -->
+            <div class="form-group">
+              <label for="teacherEmail"><i class="bi bi-envelope"></i> Email address</label>
+              <input type="email" class="form-control" id="teacherEmail" placeholder="maria@example.com" required>
+            </div>
+            
+            <!-- Language select -->
+            <div class="form-group">
+              <label for="teacherLanguage"><i class="bi bi-translate"></i> Native language</label>
+              <select class="form-control" id="teacherLanguage" required>
+                <option value="" disabled selected>Select your native language</option>
+                <option>English</option>
+                <option>Spanish</option>
+                <option>French</option>
+                <option>German</option>
+                <option>Italian</option>
+                <option>Portuguese</option>
+                <option>Russian</option>
+                <option>Japanese</option>
+                <option>Korean</option>
+                <option>Mandarin</option>
+                <option>Arabic</option>
+                <option>Hindi</option>
+                <option>Dutch</option>
+                <option>Swedish</option>
+                <option>Greek</option>
+                <option>Turkish</option>
+                <option>Vietnamese</option>
+                <option>Thai</option>
+                <option>Polish</option>
+                <option>Hebrew</option>
+              </select>
+            </div>
+            
+            <!-- Experience field -->
+            <div class="form-group">
+              <label for="teacherExperience"><i class="bi bi-briefcase"></i> Teaching experience</label>
+              <select class="form-control" id="teacherExperience" required>
+                <option value="" disabled selected>Select years of experience</option>
+                <option>0-1 years (beginner)</option>
+                <option>1-3 years</option>
+                <option>3-5 years</option>
+                <option>5+ years</option>
+                <option>10+ years</option>
+              </select>
+            </div>
+            
+            <!-- Bio field -->
+            <div class="form-group">
+              <label for="teacherBio"><i class="bi bi-chat-text"></i> Short introduction (why you'd be a great teacher)</label>
+              <textarea class="form-control" id="teacherBio" rows="3" placeholder="I'm passionate about sharing my culture and helping others communicate..."></textarea>
+            </div>
+            
+            <!-- CV upload -->
+            <div class="form-group">
+              <label for="teacherCV"><i class="bi bi-file-earmark-text"></i> Upload CV or resume (optional)</label>
+              <input type="file" class="form-control" id="teacherCV" accept=".pdf,.doc,.docx">
+              <small class="form-text">PDF, DOC, DOCX (max 5MB)</small>
+            </div>
+            
+            <!-- Checkbox -->
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="termsCheck" required>
+              <label class="form-check-label" for="termsCheck">I agree to the <a href="#">teacher terms</a> and <a href="#">privacy policy</a></label>
+            </div>
+            
+            <!-- Submit button -->
+            <button type="submit" class="btn-submit-application"><i class="bi bi-send-fill me-2"></i>Submit application</button>
+          </form>
+          
+          <!-- Note -->
+          <p class="application-note"><i class="bi bi-info-circle"></i> We typically respond within 48 hours. All applications are reviewed by our team.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bottom logos / partners -->
+    <div class="partner-logos" data-aos="fade-up">
+      <p class="partner-text">Our teachers come from top institutions and companies</p>
+      <div class="logo-grid">
+        <span class="logo-placeholder">Cambridge</span>
+        <span class="logo-placeholder">Oxford</span>
+        <span class="logo-placeholder">Berlitz</span>
+        <span class="logo-placeholder">Alliance Française</span>
+        <span class="logo-placeholder">Goethe-Institut</span>
+        <span class="logo-placeholder">Cervantes</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===== FOOTER SECTION ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- Main footer content -->
+    <div class="footer-main">
+      <div class="row g-5">
+        <!-- Column 1: Brand & social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="bi bi-chat-dots-fill footer-logo-icon"></i>
+            <span class="footer-logo-text">lingualume</span>
+          </div>
+          <p class="footer-description">Learn languages naturally with AI-powered coaching, live conversation sessions, and a global community of learners and teachers.</p>
+          
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          
+          <!-- App store badges -->
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <i class="bi bi-apple"></i>
+              <div class="badge-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-badge">
+              <i class="bi bi-google-play"></i>
+              <div class="badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> All languages</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> How it works</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Free trial</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: For teachers -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Teach</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Become an instructor</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teaching resources</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Earnings potential</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Help center</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Accessibility</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> System status</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Privacy policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Cookie policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Data processing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> GDPR compliance</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Responsible disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <div class="footer-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <h4 class="newsletter-title">Stay in the loop</h4>
+          <p class="newsletter-text">Get language tips, new course alerts, and exclusive offers.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+            <div class="newsletter-checkbox">
+              <input type="checkbox" id="newsletterConsent">
+              <label for="newsletterConsent">I agree to receive marketing emails. Unsubscribe anytime.</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 text-lg-end">
+          <div class="language-selector">
+            <i class="bi bi-globe2"></i>
+            <select class="language-select">
+              <option>English</option>
+              <option>Español</option>
+              <option>Français</option>
+              <option>Deutsch</option>
+              <option>Italiano</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>中文</option>
+              <option>한국어</option>
+              <option>العربية</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with copyright -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">© 2026 LinguaLume, Inc. All rights reserved</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 50, duration: 900 });
+
+  // optional navbar background change on scroll (adds depth)
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

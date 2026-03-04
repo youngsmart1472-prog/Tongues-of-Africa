@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Method · LinguaFlow</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* ===== GLOBAL STYLES (from main site) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f6;
+      overflow-x: hidden;
+    }
+
+    /* ===== PREMIUM NAVIGATION (same as main site) ===== */
+    .navbar-premium {
+      background: rgba(255, 255, 255, 0.72) !important;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-premium.scrolled {
+      background: rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-premium .navbar-brand {
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-premium .nav-link {
+      color: #1e2b38 !important;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 1rem;
+      padding: 0.5rem 0 !important;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .navbar-premium .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      transition: width 0.25s ease;
+    }
+
+    .navbar-premium .nav-link:hover::after,
+    .navbar-premium .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-premium .nav-link.active {
+      font-weight: 600;
+      color: #2b4c6f !important;
+    }
+
+    .btn-nav-cta {
+      background: linear-gradient(135deg, #1e2b38, #2c3e50);
+      color: white !important;
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem !important;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: none;
+      box-shadow: 0 10px 20px -8px rgba(0,40,80,0.3);
+      transition: all 0.25s;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px rgba(0,40,80,0.4);
+      background: linear-gradient(135deg, #243746, #334b61);
+    }
+
+    /* ===== METHOD PAGE SPECIFIC STYLES ===== */
+    .method-page-header {
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .method-page-header::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .method-page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,144,226,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .method-header-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .method-badge-large {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .method-page-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .method-page-title .gradient-text {
+      background: linear-gradient(135deg, #fff, #ffe6b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .method-page-subtitle {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .method-stats-mini {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .method-stats-mini .stat-item {
+      text-align: left;
+    }
+
+    .method-stats-mini .stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .method-stats-mini .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== PHILOSOPHY SECTION ===== */
+    .philosophy-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .philosophy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .philosophy-card {
+      background: #faf9f6;
+      border-radius: 40px;
+      padding: 2.5rem;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .philosophy-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 50px -20px rgba(74,144,226,0.2);
+      background: white;
+    }
+
+    .philosophy-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2rem;
+    }
+
+    .philosophy-icon i {
+      font-size: 2.5rem;
+      color: white;
+    }
+
+    .philosophy-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .philosophy-card p {
+      color: #4a5568;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    /* ===== METHOD STEPS SECTION ===== */
+    .method-steps-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(74,144,226,0.1);
+      color: #4a90e2;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .section-title .gradient-text {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: #718096;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .steps-timeline {
+      position: relative;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .steps-timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #4a90e2, #7b68ee);
+      opacity: 0.3;
+    }
+
+    .step-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4rem;
+      position: relative;
+    }
+
+    .step-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .step-content {
+      width: 45%;
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .step-number {
+      position: absolute;
+      top: -20px;
+      left: 30px;
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 1.5rem;
+      box-shadow: 0 10px 20px -5px rgba(74,144,226,0.4);
+    }
+
+    .step-content h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .step-content p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+
+    .step-image {
+      width: 45%;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
+    }
+
+    .step-image img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .step-item:hover .step-image img {
+      transform: scale(1.05);
+    }
+
+    /* ===== SCIENCE SECTION ===== */
+    .science-section {
+      padding: 100px 0;
+      background: white;
+    }
+
+    .science-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .science-card {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 30px;
+      background: #faf9f6;
+      transition: all 0.3s ease;
+    }
+
+    .science-card:hover {
+      transform: translateY(-8px);
+      background: white;
+      box-shadow: 0 20px 40px -15px rgba(74,144,226,0.2);
+    }
+
+    .science-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .science-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .science-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .science-card p {
+      color: #718096;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* ===== COMPARISON SECTION ===== */
+    .comparison-section {
+      padding: 100px 0;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+    }
+
+    .comparison-table {
+      background: white;
+      border-radius: 50px;
+      padding: 3rem;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .comparison-row {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .comparison-row:last-child {
+      border-bottom: none;
+    }
+
+    .comparison-feature {
+      flex: 2;
+      font-weight: 600;
+      color: #1a2e3f;
+      font-size: 1.1rem;
+    }
+
+    .comparison-traditional {
+      flex: 1;
+      text-align: center;
+      color: #f56565;
+      font-weight: 500;
+    }
+
+    .comparison-traditional i {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .comparison-linguaflow {
+      flex: 1;
+      text-align: center;
+      color: #4a90e2;
+      font-weight: 600;
+    }
+
+    .comparison-linguaflow i {
+      font-size: 1.5rem;
+      margin-bottom: 0.3rem;
+      color: #48bb78;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .method-cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .method-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .method-cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(74,144,226,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 5;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-cta-method {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      color: #1a2e3f;
+      padding: 1.2rem 3.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+    }
+
+    .btn-cta-method:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 25px 40px -8px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER SECTION (same as main site) ===== */
+    .footer-section {
+      background: #0b0f17;
+      color: #e2e8f0;
+      padding: 80px 0 30px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,144,226,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-section::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(123,104,238,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-main {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-description {
+      color: #a0aec0;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      max-width: 90%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      transform: translateY(-3px);
+      border-color: transparent;
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.25s;
+    }
+
+    .app-badge i {
+      font-size: 1.6rem;
+      color: #4a90e2;
+    }
+
+    .app-badge:hover {
+      background: rgba(74,144,226,0.1);
+      border-color: #4a90e2;
+      transform: translateY(-2px);
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-text small {
+      font-size: 0.65rem;
+      color: #a0aec0;
+      line-height: 1.2;
+    }
+
+    .badge-text strong {
+      font-size: 0.9rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .footer-heading {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a i {
+      font-size: 0.8rem;
+      color: #4a90e2;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .footer-newsletter {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-title {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .newsletter-text {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 60px 0 0 60px;
+      background: rgba(255,255,255,0.02);
+      color: white;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .newsletter-input::placeholder {
+      color: #4a5568;
+    }
+
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border: none;
+      border-radius: 0 60px 60px 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover {
+      transform: translateX(3px);
+      box-shadow: -5px 0 20px rgba(74,144,226,0.3);
+    }
+
+    .newsletter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .newsletter-checkbox input {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #4a90e2;
+    }
+
+    .newsletter-checkbox label {
+      color: #a0aec0;
+      font-size: 0.8rem;
+    }
+
+    .language-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.03);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .language-selector i {
+      color: #4a90e2;
+      font-size: 1.2rem;
+    }
+
+    .language-select {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .language-select option {
+      background: #0b0f17;
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .copyright {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .copyright i {
+      color: #ff6b6b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #718096;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #4a90e2;
+    }
+
+    /* responsive */
+    @media (max-width: 992px) {
+      .method-page-title {
+        font-size: 3rem;
+      }
+      
+      .philosophy-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .science-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .step-item {
+        flex-direction: column !important;
+        gap: 2rem;
+      }
+      
+      .step-content, .step-image {
+        width: 100%;
+      }
+      
+      .steps-timeline::before {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .method-page-header {
+        padding: 140px 0 60px;
+      }
+      
+      .method-page-title {
+        font-size: 2.5rem;
+      }
+      
+      .method-page-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .method-stats-mini {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+      
+      .philosophy-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .science-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .comparison-table {
+        padding: 1.5rem;
+      }
+      
+      .comparison-row {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+      }
+      
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+      
+      .footer-description {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .method-page-title {
+        font-size: 2rem;
+      }
+      
+      .method-stats-mini .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .philosophy-card {
+        padding: 1.5rem;
+      }
+      
+      .philosophy-icon {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .philosophy-icon i {
+        font-size: 2rem;
+      }
+      
+      .philosophy-card h3 {
+        font-size: 1.4rem;
+      }
+      
+      .step-content {
+        padding: 1.5rem;
+      }
+      
+      .step-content h3 {
+        font-size: 1.4rem;
+      }
+      
+      .btn-cta-method {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== REFINED NAVBAR (same as main site) ===== -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-premium" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-chat-dots-fill me-2" style="color: #4a6fa5;"></i>
+      lingualume
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="box-shadow: none;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link active" href="method.html">Method</a></li>
+        <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="register.html" class="btn btn-nav-cta"><i class="bi bi-person-check me-2"></i>Start free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== METHOD PAGE HEADER ===== -->
+<section class="method-page-header">
+  <div class="container method-header-content">
+    <div class="row">
+      <div class="col-lg-10" data-aos="fade-up">
+        <span class="method-badge-large"><i class="bi bi-stars me-2"></i>The LinguaFlow Way</span>
+        <h1 class="method-page-title">Science-backed,<br><span class="gradient-text">human-centered</span> learning</h1>
+        <p class="method-page-subtitle">We combined neuroscience, AI technology, and real human connection to create a method that actually makes you fluent.</p>
+        
+        <div class="method-stats-mini">
+          <div class="stat-item">
+            <div class="stat-number">93%</div>
+            <div class="stat-label">Speak in 3 months</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.96</div>
+            <div class="stat-label">App store rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24</div>
+            <div class="stat-label">Languages</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY SECTION ===== -->
+<section class="philosophy-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-gem me-2"></i>Our Philosophy</span>
+      <h2 class="section-title">Learn the way<br><span class="gradient-text">humans are wired</span></h2>
+      <p class="section-subtitle">Three core principles guide everything we build.</p>
+    </div>
+    
+    <div class="philosophy-grid">
+      <div class="philosophy-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="philosophy-icon">
+          <i class="bi bi-chat-heart"></i>
+        </div>
+        <h3>Immersion first</h3>
+        <p>You learned your first language by listening, mimicking, and making mistakes. We recreate that natural process — grammar comes later, after your ear and tongue know the patterns.</p>
+      </div>
+      
+      <div class="philosophy-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="philosophy-icon">
+          <i class="bi bi-robot"></i>
+        </div>
+        <h3>AI + human</h3>
+        <p>Technology handles the repetitive work — pronunciation analysis, spaced repetition, progress tracking. Humans handle what matters: connection, culture, and conversation.</p>
+      </div>
+      
+      <div class="philosophy-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="philosophy-icon">
+          <i class="bi bi-globe-americas"></i>
+        </div>
+        <h3>Culture matters</h3>
+        <p>Language lives in culture — the jokes, the gestures, the context. Every lesson weaves in cultural insights so you don't just speak, you understand.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== METHOD STEPS SECTION ===== -->
+<section class="method-steps-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-diagram-3 me-2"></i>Your Journey</span>
+      <h2 class="section-title">How it <span class="gradient-text">works</span></h2>
+      <p class="section-subtitle">Four simple steps from beginner to confident speaker.</p>
+    </div>
+    
+    <div class="steps-timeline">
+      <!-- Step 1 -->
+      <div class="step-item" data-aos="fade-right">
+        <div class="step-content">
+          <div class="step-number">1</div>
+          <h3>Immerse & absorb</h3>
+          <p>Start with listening and pattern recognition — just like you learned your first language. Our AI adapts content to your level, introducing new words in context.</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> 50+ hours of immersive audio</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> Real conversations, not textbook dialogues</p>
+        </div>
+        <div class="step-image">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" alt="Immersion">
+        </div>
+      </div>
+      
+      <!-- Step 2 -->
+      <div class="step-item" data-aos="fade-left">
+        <div class="step-content">
+          <div class="step-number">2</div>
+          <h3>Speak & get feedback</h3>
+          <p>Practice speaking with our AI pronunciation coach. Get instant feedback on your accent, intonation, and fluency — then try again until it sounds natural.</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> Real-time waveform analysis</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> Compare your voice to native speakers</p>
+        </div>
+        <div class="step-image">
+          <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=2049&auto=format&fit=crop" alt="Speaking practice">
+        </div>
+      </div>
+      
+      <!-- Step 3 -->
+      <div class="step-item" data-aos="fade-right">
+        <div class="step-content">
+          <div class="step-number">3</div>
+          <h3>Live conversation</h3>
+          <p>Connect with native speakers for 1-on-1 video sessions. Real people, real accents, real conversations — the kind no app can simulate.</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> 500+ teachers from 40+ countries</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> Schedule sessions that fit your timezone</p>
+        </div>
+        <div class="step-image">
+          <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=2070&auto=format&fit=crop" alt="Live conversation">
+        </div>
+      </div>
+      
+      <!-- Step 4 -->
+      <div class="step-item" data-aos="fade-left">
+        <div class="step-content">
+          <div class="step-number">4</div>
+          <h3>Cultural context</h3>
+          <p>Learn the jokes, the idioms, the gestures. Our cultural modules explain not just what to say, but why — so you connect on a deeper level.</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> 100+ culture guides per language</p>
+          <p><i class="bi bi-check-circle-fill" style="color: #4a90e2;"></i> Slang, customs, and social norms</p>
+        </div>
+        <div class="step-image">
+          <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?q=80&w=2071&auto=format&fit=crop" alt="Cultural context">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SCIENCE SECTION ===== -->
+<section class="science-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-cpu me-2"></i>Backed by Research</span>
+      <h2 class="section-title">The <span class="gradient-text">science</span> behind it</h2>
+      <p class="section-subtitle">We didn't guess — we studied how brains actually learn languages.</p>
+    </div>
+    
+    <div class="science-grid">
+      <div class="science-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="science-icon">
+          <i class="bi bi-braces"></i>
+        </div>
+        <h4>Spaced repetition</h4>
+        <p>Our algorithm shows you words right before you'd forget them, moving them from short-term to long-term memory.</p>
+      </div>
+      
+      <div class="science-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="science-icon">
+          <i class="bi bi-soundwave"></i>
+        </div>
+        <h4>Phonetic training</h4>
+        <p>Visual feedback shows exactly how your pronunciation differs from native speakers — you learn to hear what you're missing.</p>
+      </div>
+      
+      <div class="science-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="science-icon">
+          <i class="bi bi-chat"></i>
+        </div>
+        <h4>Comprehensible input</h4>
+        <p>Based on Stephen Krashen's theory — you acquire language best when you understand messages, not when you memorize rules.</p>
+      </div>
+      
+      <div class="science-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="science-icon">
+          <i class="bi bi-emoji-smile"></i>
+        </div>
+        <h4>Emotional connection</h4>
+        <p>Content that makes you laugh, think, or feel creates stronger neural pathways. Our lessons are designed to engage, not bore.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARISON SECTION ===== -->
+<section class="comparison-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-bar-chart me-2"></i>Why we're different</span>
+      <h2 class="section-title">LinguaFlow vs.<br><span class="gradient-text">traditional apps</span></h2>
+    </div>
+    
+    <div class="comparison-table" data-aos="fade-up">
+      <div class="comparison-row">
+        <div class="comparison-feature">Pronunciation feedback</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Basic recording only</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> Real-time AI analysis</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-feature">Conversation practice</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Chatbots only</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> Live 1-on-1 with natives</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-feature">Cultural context</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Minimal</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> Integrated in every lesson</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-feature">Learning method</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Grammar-first</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> Immersion-first</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-feature">Content variety</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Flashcards & drills</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> Stories, podcasts, videos</div>
+      </div>
+      
+      <div class="comparison-row">
+        <div class="comparison-feature">Progress tracking</div>
+        <div class="comparison-traditional"><i class="bi bi-x-circle"></i> Basic streaks</div>
+        <div class="comparison-linguaflow"><i class="bi bi-check-circle-fill"></i> CEFR-aligned benchmarks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="method-cta-section">
+  <div class="container">
+    <div class="cta-content" data-aos="fade-up">
+      <h2>Ready to learn<br><span class="gradient-text">the right way?</span></h2>
+      <p>Join 80,000+ learners who found their voice in a new language.</p>
+      <a href="register.html" class="btn-cta-method"><i class="bi bi-rocket-takeoff-fill me-2"></i>Start your 7-day free trial</a>
+      <p style="margin-top: 2rem; font-size: 0.9rem; opacity: 0.7;"><i class="bi bi-shield-check me-2"></i>No credit card required · Cancel anytime</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER SECTION (same as main site) ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- Main footer content -->
+    <div class="footer-main">
+      <div class="row g-5">
+        <!-- Column 1: Brand & social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="bi bi-chat-dots-fill footer-logo-icon"></i>
+            <span class="footer-logo-text">lingualume</span>
+          </div>
+          <p class="footer-description">Learn languages naturally with AI-powered coaching, live conversation sessions, and a global community of learners and teachers.</p>
+          
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          
+          <!-- App store badges -->
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <i class="bi bi-apple"></i>
+              <div class="badge-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-badge">
+              <i class="bi bi-google-play"></i>
+              <div class="badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html"><i class="bi bi-chevron-right"></i> All languages</a></li>
+            <li><a href="method.html"><i class="bi bi-chevron-right"></i> How it works</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Free trial</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: For teachers -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Teach</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Become an instructor</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teaching resources</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Earnings potential</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Help center</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Accessibility</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> System status</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Privacy policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Cookie policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Data processing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> GDPR compliance</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Responsible disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <div class="footer-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <h4 class="newsletter-title">Stay in the loop</h4>
+          <p class="newsletter-text">Get language tips, new course alerts, and exclusive offers.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+            <div class="newsletter-checkbox">
+              <input type="checkbox" id="newsletterConsent">
+              <label for="newsletterConsent">I agree to receive marketing emails. Unsubscribe anytime.</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 text-lg-end">
+          <div class="language-selector">
+            <i class="bi bi-globe2"></i>
+            <select class="language-select">
+              <option>English</option>
+              <option>Español</option>
+              <option>Français</option>
+              <option>Deutsch</option>
+              <option>Italiano</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>中文</option>
+              <option>한국어</option>
+              <option>العربية</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with copyright -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">© 2026 LinguaLume, Inc. All rights reserved. Made with <i class="bi bi-heart-fill" style="color: #ff6b6b;"></i> for language lovers.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 50, duration: 900 });
+
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

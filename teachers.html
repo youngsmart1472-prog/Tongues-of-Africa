@@ -1,0 +1,1731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teachers · LinguaFlow</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* ===== GLOBAL STYLES (from main site) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f6;
+      overflow-x: hidden;
+    }
+
+    /* ===== PREMIUM NAVIGATION (same as main site) ===== */
+    .navbar-premium {
+      background: rgba(255, 255, 255, 0.72) !important;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-premium.scrolled {
+      background: rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-premium .navbar-brand {
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-premium .nav-link {
+      color: #1e2b38 !important;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 1rem;
+      padding: 0.5rem 0 !important;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .navbar-premium .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      transition: width 0.25s ease;
+    }
+
+    .navbar-premium .nav-link:hover::after,
+    .navbar-premium .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-premium .nav-link.active {
+      font-weight: 600;
+      color: #2b4c6f !important;
+    }
+
+    .btn-nav-cta {
+      background: linear-gradient(135deg, #1e2b38, #2c3e50);
+      color: white !important;
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem !important;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: none;
+      box-shadow: 0 10px 20px -8px rgba(0,40,80,0.3);
+      transition: all 0.25s;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px rgba(0,40,80,0.4);
+      background: linear-gradient(135deg, #243746, #334b61);
+    }
+
+    /* ===== TEACHERS PAGE SPECIFIC STYLES ===== */
+    .teachers-page-header {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .teachers-page-header::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .teachers-page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .teachers-header-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .teachers-badge-large {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .teachers-page-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .teachers-page-title .gradient-text {
+      background: linear-gradient(135deg, #fff, #ffe6b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .teachers-page-subtitle {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .teachers-stats-mini {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .teachers-stats-mini .stat-item {
+      text-align: left;
+    }
+
+    .teachers-stats-mini .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .teachers-stats-mini .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== FILTER SECTION ===== */
+    .filter-section {
+      padding: 40px 0;
+      background: white;
+      border-bottom: 1px solid #edf2f7;
+    }
+
+    .filter-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-tab {
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      background: #f7fafc;
+      color: #4a5568;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid #edf2f7;
+    }
+
+    .filter-tab:hover,
+    .filter-tab.active {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border-color: transparent;
+    }
+
+    .filter-select {
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      border: 1px solid #edf2f7;
+      background: #f7fafc;
+      font-weight: 500;
+      color: #1a2e3f;
+      outline: none;
+      cursor: pointer;
+    }
+
+    /* ===== TEACHERS GRID SECTION ===== */
+    .teachers-grid-section {
+      padding: 80px 0;
+      background: #faf9f6;
+    }
+
+    .teacher-card {
+      background: white;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      height: 100%;
+      position: relative;
+    }
+
+    .teacher-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 50px -15px rgba(74,144,226,0.2);
+    }
+
+    .teacher-image-wrapper {
+      position: relative;
+      height: 280px;
+      overflow: hidden;
+    }
+
+    .teacher-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .teacher-card:hover .teacher-image-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .teacher-badge {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      padding: 0.4rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      z-index: 2;
+    }
+
+    .teacher-content {
+      padding: 2rem;
+    }
+
+    .teacher-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .teacher-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.2rem;
+    }
+
+    .teacher-rating {
+      background: #fbbf24;
+      color: white;
+      padding: 0.3rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .teacher-language {
+      font-size: 1rem;
+      color: #4a90e2;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .teacher-language i {
+      font-size: 1.2rem;
+    }
+
+    .teacher-bio {
+      color: #4a5568;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .teacher-specialties {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .specialty-tag {
+      background: #f7fafc;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      color: #4a5568;
+      border: 1px solid #edf2f7;
+    }
+
+    .teacher-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1rem;
+      border-top: 1px solid #edf2f7;
+    }
+
+    .teacher-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2e3f;
+    }
+
+    .teacher-price span {
+      font-size: 0.9rem;
+      color: #a0aec0;
+      font-weight: 400;
+    }
+
+    .btn-book {
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-book:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(0,20,40,0.3);
+    }
+
+    /* ===== FEATURED TEACHER ===== */
+    .featured-teacher-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .featured-teacher-card {
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+      border-radius: 60px;
+      padding: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-teacher-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(74,144,226,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .featured-teacher-image {
+      position: relative;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 30px 60px -20px rgba(0,0,0,0.2);
+    }
+
+    .featured-teacher-image img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
+
+    .featured-teacher-content {
+      padding: 2rem;
+    }
+
+    .featured-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      padding: 0.5rem 1.5rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-teacher-content h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .featured-teacher-content .teacher-meta {
+      display: flex;
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .featured-teacher-content .teacher-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4a5568;
+    }
+
+    .featured-teacher-content .teacher-meta i {
+      color: #4a90e2;
+    }
+
+    .featured-quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #2d3748;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .btn-featured-book {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.25s;
+      margin-top: 1rem;
+    }
+
+    .btn-featured-book:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 30px -10px rgba(0,20,40,0.3);
+    }
+
+    /* ===== WHY TEACHERS SECTION ===== */
+    .why-teachers-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+    }
+
+    .benefit-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -15px rgba(74,144,226,0.2);
+    }
+
+    .benefit-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .benefit-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .benefit-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .benefit-card p {
+      color: #718096;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    /* ===== BECOME TEACHER CTA ===== */
+    .become-teacher-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .become-teacher-card {
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      border-radius: 60px;
+      padding: 4rem;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .become-teacher-card::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .become-teacher-card h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      position: relative;
+      z-index: 5;
+    }
+
+    .become-teacher-card p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      z-index: 5;
+    }
+
+    .btn-become-teacher {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      color: #1a2e3f;
+      padding: 1.2rem 3.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.25s;
+      position: relative;
+      z-index: 5;
+    }
+
+    .btn-become-teacher:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER SECTION (same as main site) ===== */
+    .footer-section {
+      background: #0b0f17;
+      color: #e2e8f0;
+      padding: 80px 0 30px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,144,226,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-section::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(123,104,238,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-main {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-description {
+      color: #a0aec0;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      max-width: 90%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      transform: translateY(-3px);
+      border-color: transparent;
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.25s;
+    }
+
+    .app-badge i {
+      font-size: 1.6rem;
+      color: #4a90e2;
+    }
+
+    .app-badge:hover {
+      background: rgba(74,144,226,0.1);
+      border-color: #4a90e2;
+      transform: translateY(-2px);
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-text small {
+      font-size: 0.65rem;
+      color: #a0aec0;
+      line-height: 1.2;
+    }
+
+    .badge-text strong {
+      font-size: 0.9rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .footer-heading {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a i {
+      font-size: 0.8rem;
+      color: #4a90e2;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .footer-newsletter {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-title {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .newsletter-text {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 60px 0 0 60px;
+      background: rgba(255,255,255,0.02);
+      color: white;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .newsletter-input::placeholder {
+      color: #4a5568;
+    }
+
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border: none;
+      border-radius: 0 60px 60px 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover {
+      transform: translateX(3px);
+      box-shadow: -5px 0 20px rgba(74,144,226,0.3);
+    }
+
+    .newsletter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .newsletter-checkbox input {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #4a90e2;
+    }
+
+    .newsletter-checkbox label {
+      color: #a0aec0;
+      font-size: 0.8rem;
+    }
+
+    .language-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.03);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .language-selector i {
+      color: #4a90e2;
+      font-size: 1.2rem;
+    }
+
+    .language-select {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .language-select option {
+      background: #0b0f17;
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .copyright {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .copyright i {
+      color: #ff6b6b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #718096;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #4a90e2;
+    }
+
+    /* responsive */
+    @media (max-width: 1200px) {
+      .benefit-cards {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 992px) {
+      .teachers-page-title {
+        font-size: 3rem;
+      }
+      
+      .teachers-stats-mini {
+        gap: 2rem;
+      }
+      
+      .filter-grid {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .featured-teacher-card {
+        padding: 2rem;
+      }
+      
+      .featured-teacher-content h2 {
+        font-size: 2rem;
+      }
+      
+      .become-teacher-card {
+        padding: 3rem;
+      }
+      
+      .become-teacher-card h2 {
+        font-size: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .teachers-page-header {
+        padding: 140px 0 60px;
+      }
+      
+      .teachers-page-title {
+        font-size: 2.5rem;
+      }
+      
+      .teachers-page-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .teachers-stats-mini {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      
+      .teachers-stats-mini .stat-number {
+        font-size: 2rem;
+      }
+      
+      .filter-tabs {
+        width: 100%;
+      }
+      
+      .filter-tab {
+        flex: 1;
+        text-align: center;
+      }
+      
+      .filter-select {
+        width: 100%;
+      }
+      
+      .teacher-image-wrapper {
+        height: 240px;
+      }
+      
+      .benefit-cards {
+        grid-template-columns: 1fr;
+      }
+      
+      .become-teacher-card {
+        padding: 2rem;
+      }
+      
+      .become-teacher-card h2 {
+        font-size: 2rem;
+      }
+      
+      .footer-description {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .teachers-page-title {
+        font-size: 2rem;
+      }
+      
+      .teachers-stats-mini .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .teacher-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+      }
+      
+      .featured-teacher-content h2 {
+        font-size: 1.6rem;
+      }
+      
+      .featured-teacher-content .teacher-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .btn-featured-book {
+        width: 100%;
+        justify-content: center;
+      }
+      
+      .btn-become-teacher {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== REFINED NAVBAR (same as main site) ===== -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-premium" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-chat-dots-fill me-2" style="color: #4a6fa5;"></i>
+      lingualume
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="box-shadow: none;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="method.html">Method</a></li>
+        <li class="nav-item"><a class="nav-link active" href="teachers.html">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="register.html" class="btn btn-nav-cta"><i class="bi bi-person-check me-2"></i>Start free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== TEACHERS PAGE HEADER ===== -->
+<section class="teachers-page-header">
+  <div class="container teachers-header-content">
+    <div class="row">
+      <div class="col-lg-10" data-aos="fade-up">
+        <span class="teachers-badge-large"><i class="bi bi-people-fill me-2"></i>Native Speakers · Global Community</span>
+        <h1 class="teachers-page-title">Learn from <span class="gradient-text">real people,</span><br>not just algorithms</h1>
+        <p class="teachers-page-subtitle">500+ certified teachers from 40+ countries. Each session is 1-on-1, personalized, and built around your goals.</p>
+        
+        <div class="teachers-stats-mini">
+          <div class="stat-item">
+            <div class="stat-number">500+</div>
+            <div class="stat-label">Teachers</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">40+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">4.98</div>
+            <div class="stat-label">Avg. rating</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FILTER SECTION ===== -->
+<section class="filter-section">
+  <div class="container">
+    <div class="filter-grid" data-aos="fade-up">
+      <div class="filter-tabs">
+        <span class="filter-tab active">All teachers</span>
+        <span class="filter-tab">Spanish</span>
+        <span class="filter-tab">French</span>
+        <span class="filter-tab">German</span>
+        <span class="filter-tab">Italian</span>
+        <span class="filter-tab">Japanese</span>
+        <span class="filter-tab">Korean</span>
+        <span class="filter-tab">Mandarin</span>
+      </div>
+      <select class="filter-select">
+        <option>Sort by: Recommended</option>
+        <option>Rating: High to Low</option>
+        <option>Price: Low to High</option>
+        <option>Most lessons</option>
+        <option>Newest teachers</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURED TEACHER SECTION ===== -->
+<section class="featured-teacher-section">
+  <div class="container">
+    <div class="featured-teacher-card" data-aos="fade-up">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <div class="featured-teacher-image">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1976&auto=format&fit=crop" alt="Elena Rodriguez">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="featured-teacher-content">
+            <span class="featured-badge"><i class="bi bi-star-fill me-2"></i>Teacher of the Month</span>
+            <h2>Elena Rodríguez</h2>
+            <div class="teacher-meta">
+              <span><i class="bi bi-flag"></i> Spanish · Native</span>
+              <span><i class="bi bi-award"></i> 8 years experience</span>
+              <span><i class="bi bi-people"></i> 1,240 sessions</span>
+            </div>
+            <p class="featured-quote">"I don't just teach Spanish — I help you think in Spanish. My students don't translate; they feel the language. Whether you need business Spanish or want to connect with family, we'll get there together."</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">DELE preparation</span>
+              <span class="specialty-tag">Business Spanish</span>
+              <span class="specialty-tag">Conversation</span>
+              <span class="specialty-tag">Latin American culture</span>
+            </div>
+            <a href="#" class="btn-featured-book"><i class="bi bi-calendar-check me-2"></i>Book a session with Elena</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEACHERS GRID SECTION ===== -->
+<section class="teachers-grid-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Teacher 1 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1974&auto=format&fit=crop" alt="Carlos Mendez">
+            <span class="teacher-badge">Top rated</span>
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Carlos Méndez</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.99</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Spanish · Mexico
+            </div>
+            <p class="teacher-bio">Certified DELE examiner with 10+ years experience. Specializes in helping professionals gain confidence for work and travel.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">DELE prep</span>
+              <span class="specialty-tag">Business</span>
+              <span class="specialty-tag">Conversation</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$32 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 2 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" alt="Sophie Dubois">
+            <span class="teacher-badge">New</span>
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Sophie Dubois</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.97</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> French · Paris
+            </div>
+            <p class="teacher-bio">Former journalist turned teacher. Learn real, everyday French — slang, expressions, and culture you won't find in textbooks.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">DELF/DALF</span>
+              <span class="specialty-tag">Literature</span>
+              <span class="specialty-tag">Media French</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$35 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 3 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2070&auto=format&fit=crop" alt="Kenji Tanaka">
+            <span class="teacher-badge">4.98</span>
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Kenji Tanaka</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.98</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Japanese · Tokyo
+            </div>
+            <p class="teacher-bio">JLPT N1 certified teacher. Focuses on practical conversation and kanji mastery. Great for beginners and intermediate learners.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">JLPT prep</span>
+              <span class="specialty-tag">Business</span>
+              <span class="specialty-tag">Manga/Anime</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$38 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 4 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1961&auto=format&fit=crop" alt="Maria Schmidt">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Maria Schmidt</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.96</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> German · Berlin
+            </div>
+            <p class="teacher-bio">Goethe-Institut certified. Specializes in helping professionals pass B2/C1 exams and feel confident in German workplaces.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">Goethe prep</span>
+              <span class="specialty-tag">Business</span>
+              <span class="specialty-tag">Tech German</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$34 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 5 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop" alt="Giulia Ricci">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Giulia Ricci</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.99</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Italian · Florence
+            </div>
+            <p class="teacher-bio">Art historian and language lover. Learn Italian through art, food, and culture — not boring grammar drills.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">CILS prep</span>
+              <span class="specialty-tag">Art history</span>
+              <span class="specialty-tag">Cooking terms</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$36 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 6 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1974&auto=format&fit=crop" alt="Min-Jun Park">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Min-Jun Park</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.97</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Korean · Seoul
+            </div>
+            <p class="teacher-bio">K-drama and K-pop specialist. Makes learning Korean fun with songs, drama clips, and real conversations.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">TOPIK prep</span>
+              <span class="specialty-tag">K-drama</span>
+              <span class="specialty-tag">Slang</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$33 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 7 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="James Chen">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">James Chen</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.95</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Mandarin · Beijing
+            </div>
+            <p class="teacher-bio">HSK specialist with a focus on tones and pronunciation. Helps you sound like a native, not a textbook.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">HSK prep</span>
+              <span class="specialty-tag">Tones</span>
+              <span class="specialty-tag">Business</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$37 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 8 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" alt="Ana Oliveira">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Ana Oliveira</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.98</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Portuguese · São Paulo
+            </div>
+            <p class="teacher-bio">Brazilian Portuguese specialist. Learn the real way Brazilians speak — with warmth, rhythm, and lots of expression.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">CELPE-Bras</span>
+              <span class="specialty-tag">Music</span>
+              <span class="specialty-tag">Slang</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$31 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Teacher 9 -->
+      <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="450">
+        <div class="teacher-card">
+          <div class="teacher-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=1974&auto=format&fit=crop" alt="Yuki Nakamura">
+          </div>
+          <div class="teacher-content">
+            <div class="teacher-header">
+              <h3 class="teacher-name">Yuki Nakamura</h3>
+              <span class="teacher-rating"><i class="bi bi-star-fill"></i> 4.97</span>
+            </div>
+            <div class="teacher-language">
+              <i class="bi bi-flag"></i> Japanese · Osaka
+            </div>
+            <p class="teacher-bio">Kansai dialect specialist. Learn standard Japanese plus the friendly, casual dialect of Western Japan.</p>
+            <div class="teacher-specialties">
+              <span class="specialty-tag">JLPT N1-N5</span>
+              <span class="specialty-tag">Kansai dialect</span>
+              <span class="specialty-tag">Casual convo</span>
+            </div>
+            <div class="teacher-footer">
+              <div class="teacher-price">$36 <span>/ 60min</span></div>
+              <a href="#" class="btn-book">Book</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load more button -->
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn btn-outline-primary" style="padding: 1rem 3rem; border-radius: 60px; border-width: 2px;">Load more teachers</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY TEACHERS SECTION ===== -->
+<section class="why-teachers-section">
+  <div class="container">
+    <div class="section-header text-center" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-heart-fill me-2"></i>Why our teachers</span>
+      <h2 class="section-title">Learn from the <span class="gradient-text">best</span></h2>
+      <p class="section-subtitle">Every teacher is vetted, certified, and passionate.</p>
+    </div>
+    
+    <div class="benefit-cards">
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="benefit-icon">
+          <i class="bi bi-patch-check"></i>
+        </div>
+        <h4>Certified & vetted</h4>
+        <p>All teachers pass background checks and certification verification. Only 15% of applicants are accepted.</p>
+      </div>
+      
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="benefit-icon">
+          <i class="bi bi-translate"></i>
+        </div>
+        <h4>Native speakers</h4>
+        <p>Every teacher is a native speaker from their country, so you learn authentic pronunciation and expressions.</p>
+      </div>
+      
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="benefit-icon">
+          <i class="bi bi-award"></i>
+        </div>
+        <h4>Specialized training</h4>
+        <p>Teachers receive ongoing training in online teaching methods, cultural sensitivity, and student engagement.</p>
+      </div>
+      
+      <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="benefit-icon">
+          <i class="bi bi-chat-heart"></i>
+        </div>
+        <h4>Passionate mentors</h4>
+        <p>Our teachers aren't just instructors — they're mentors who genuinely care about your progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BECOME TEACHER CTA ===== -->
+<section class="become-teacher-section">
+  <div class="container">
+    <div class="become-teacher-card" data-aos="fade-up">
+      <h2>Share your language<br><span class="gradient-text">with the world</span></h2>
+      <p>Join 500+ teachers from 40+ countries. Set your own hours, earn great rates, and make real connections.</p>
+      <a href="#" class="btn-become-teacher"><i class="bi bi-mortarboard-fill me-2"></i>Apply to teach</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER SECTION (same as main site) ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- Main footer content -->
+    <div class="footer-main">
+      <div class="row g-5">
+        <!-- Column 1: Brand & social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="bi bi-chat-dots-fill footer-logo-icon"></i>
+            <span class="footer-logo-text">lingualume</span>
+          </div>
+          <p class="footer-description">Learn languages naturally with AI-powered coaching, live conversation sessions, and a global community of learners and teachers.</p>
+          
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          
+          <!-- App store badges -->
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <i class="bi bi-apple"></i>
+              <div class="badge-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-badge">
+              <i class="bi bi-google-play"></i>
+              <div class="badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html"><i class="bi bi-chevron-right"></i> All languages</a></li>
+            <li><a href="method.html"><i class="bi bi-chevron-right"></i> How it works</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Free trial</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: For teachers -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Teach</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Become an instructor</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teaching resources</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Earnings potential</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Help center</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Accessibility</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> System status</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Privacy policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Cookie policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Data processing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> GDPR compliance</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Responsible disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <div class="footer-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <h4 class="newsletter-title">Stay in the loop</h4>
+          <p class="newsletter-text">Get language tips, new course alerts, and exclusive offers.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+            <div class="newsletter-checkbox">
+              <input type="checkbox" id="newsletterConsent">
+              <label for="newsletterConsent">I agree to receive marketing emails. Unsubscribe anytime.</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 text-lg-end">
+          <div class="language-selector">
+            <i class="bi bi-globe2"></i>
+            <select class="language-select">
+              <option>English</option>
+              <option>Español</option>
+              <option>Français</option>
+              <option>Deutsch</option>
+              <option>Italiano</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>中文</option>
+              <option>한국어</option>
+              <option>العربية</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with copyright -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">© 2026 LinguaLume, Inc. All rights reserved. Made with <i class="bi bi-heart-fill" style="color: #ff6b6b;"></i> for language lovers.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 50, duration: 900 });
+
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

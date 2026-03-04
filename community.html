@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community · LinguaFlow</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* ===== GLOBAL STYLES (from main site) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f6;
+      overflow-x: hidden;
+    }
+
+    /* ===== PREMIUM NAVIGATION (same as main site) ===== */
+    .navbar-premium {
+      background: rgba(255, 255, 255, 0.72) !important;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-premium.scrolled {
+      background: rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-premium .navbar-brand {
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-premium .nav-link {
+      color: #1e2b38 !important;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 1rem;
+      padding: 0.5rem 0 !important;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .navbar-premium .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      transition: width 0.25s ease;
+    }
+
+    .navbar-premium .nav-link:hover::after,
+    .navbar-premium .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-premium .nav-link.active {
+      font-weight: 600;
+      color: #2b4c6f !important;
+    }
+
+    .btn-nav-cta {
+      background: linear-gradient(135deg, #1e2b38, #2c3e50);
+      color: white !important;
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem !important;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: none;
+      box-shadow: 0 10px 20px -8px rgba(0,40,80,0.3);
+      transition: all 0.25s;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px rgba(0,40,80,0.4);
+      background: linear-gradient(135deg, #243746, #334b61);
+    }
+
+    /* ===== COMMUNITY PAGE SPECIFIC STYLES ===== */
+    .community-page-header {
+      background: linear-gradient(135deg, #7b68ee, #4a90e2);
+      padding: 160px 0 100px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+    }
+
+    .community-page-header::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .community-page-header::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .community-header-content {
+      position: relative;
+      z-index: 5;
+    }
+
+    .community-badge-large {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.8rem 2rem;
+      border-radius: 60px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 2rem;
+      color: white;
+    }
+
+    .community-page-title {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 800px;
+    }
+
+    .community-page-title .gradient-text {
+      background: linear-gradient(135deg, #fff, #ffe6b0);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .community-page-subtitle {
+      font-size: 1.3rem;
+      line-height: 1.6;
+      opacity: 0.9;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    .community-stats-mini {
+      display: flex;
+      gap: 3rem;
+      margin-top: 3rem;
+    }
+
+    .community-stats-mini .stat-item {
+      text-align: left;
+    }
+
+    .community-stats-mini .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: white;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+
+    .community-stats-mini .stat-label {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.8);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== COMMUNITY HIGHLIGHTS ===== */
+    .highlights-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .highlight-card {
+      background: #faf9f6;
+      border-radius: 40px;
+      padding: 2.5rem;
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 50px -20px rgba(74,144,226,0.2);
+      background: white;
+    }
+
+    .highlight-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-icon i {
+      font-size: 2rem;
+      color: white;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .highlight-card p {
+      color: #4a5568;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight-link {
+      color: #4a90e2;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: gap 0.2s;
+    }
+
+    .highlight-link:hover {
+      gap: 1rem;
+    }
+
+    /* ===== EVENTS SECTION ===== */
+    .events-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .section-badge {
+      display: inline-block;
+      background: rgba(74,144,226,0.1);
+      color: #4a90e2;
+      padding: 0.5rem 1.8rem;
+      border-radius: 60px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 1rem;
+    }
+
+    .section-title .gradient-text {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .event-card {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05);
+    }
+
+    .event-card:hover {
+      transform: translateX(10px);
+      box-shadow: 0 20px 40px -15px rgba(74,144,226,0.2);
+    }
+
+    .event-date {
+      min-width: 100px;
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      color: white;
+    }
+
+    .event-date .day {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .event-date .month {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .event-details {
+      flex: 1;
+    }
+
+    .event-details h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.5rem;
+    }
+
+    .event-meta {
+      display: flex;
+      gap: 2rem;
+      color: #718096;
+      font-size: 0.95rem;
+    }
+
+    .event-meta i {
+      color: #4a90e2;
+      margin-right: 0.3rem;
+    }
+
+    .event-attendees {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #4a90e2;
+      font-weight: 500;
+    }
+
+    .btn-event {
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      color: white;
+      padding: 0.8rem 2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+
+    .btn-event:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(0,20,40,0.3);
+    }
+
+    /* ===== FORUM PREVIEW SECTION ===== */
+    .forum-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .forum-categories {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .forum-category {
+      background: #faf9f6;
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .forum-category:hover {
+      transform: translateY(-8px);
+      background: white;
+      box-shadow: 0 20px 40px -15px rgba(74,144,226,0.2);
+    }
+
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+
+    .category-icon i {
+      font-size: 1.8rem;
+      color: white;
+    }
+
+    .forum-category h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.5rem;
+    }
+
+    .forum-category p {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .topic-count {
+      color: #4a90e2;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .forum-posts {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .forum-post {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem;
+      border-bottom: 1px solid #edf2f7;
+      transition: background 0.2s;
+    }
+
+    .forum-post:hover {
+      background: #faf9f6;
+    }
+
+    .post-avatar img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .post-content {
+      flex: 1;
+    }
+
+    .post-title {
+      font-weight: 600;
+      color: #1a2e3f;
+      margin-bottom: 0.3rem;
+      text-decoration: none;
+    }
+
+    .post-title:hover {
+      color: #4a90e2;
+    }
+
+    .post-meta {
+      display: flex;
+      gap: 1rem;
+      color: #718096;
+      font-size: 0.85rem;
+    }
+
+    .post-stats {
+      display: flex;
+      gap: 1.5rem;
+      color: #a0aec0;
+      font-size: 0.9rem;
+    }
+
+    .post-stats i {
+      margin-right: 0.3rem;
+      color: #4a90e2;
+    }
+
+    /* ===== LANGUAGE EXCHANGE SECTION ===== */
+    .exchange-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+    }
+
+    .exchange-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .exchange-card {
+      background: white;
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .exchange-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -15px rgba(74,144,226,0.2);
+    }
+
+    .exchange-flags {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .exchange-flags span {
+      font-size: 2.5rem;
+    }
+
+    .exchange-flags i {
+      font-size: 1.5rem;
+      color: #4a90e2;
+    }
+
+    .exchange-card h4 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.5rem;
+    }
+
+    .exchange-card p {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn-exchange {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: inline-block;
+    }
+
+    .btn-exchange:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    /* ===== ACHIEVEMENTS SECTION ===== */
+    .achievements-section {
+      padding: 80px 0;
+      background: white;
+    }
+
+    .achievement-card {
+      background: #faf9f6;
+      border-radius: 30px;
+      padding: 2rem;
+      text-align: center;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-8px);
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+    }
+
+    .achievement-card:hover .achievement-icon {
+      background: white;
+    }
+
+    .achievement-card:hover .achievement-icon i {
+      color: #4a90e2;
+    }
+
+    .achievement-card:hover h4,
+    .achievement-card:hover p {
+      color: white;
+    }
+
+    .achievement-icon {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .achievement-icon i {
+      font-size: 2rem;
+      color: white;
+      transition: all 0.3s ease;
+    }
+
+    .achievement-card h4 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+      color: #718096;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .community-cta-section {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .community-cta-section::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .community-cta-section::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      left: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(74,144,226,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 5;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-content h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-content p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 2.5rem;
+    }
+
+    .btn-cta-community {
+      display: inline-flex;
+      align-items: center;
+      background: white;
+      color: #1a2e3f;
+      padding: 1.2rem 3.5rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+    }
+
+    .btn-cta-community:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 25px 40px -8px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER SECTION (same as main site) ===== */
+    .footer-section {
+      background: #0b0f17;
+      color: #e2e8f0;
+      padding: 80px 0 30px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,144,226,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-section::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(123,104,238,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-main {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-description {
+      color: #a0aec0;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      max-width: 90%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      transform: translateY(-3px);
+      border-color: transparent;
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.25s;
+    }
+
+    .app-badge i {
+      font-size: 1.6rem;
+      color: #4a90e2;
+    }
+
+    .app-badge:hover {
+      background: rgba(74,144,226,0.1);
+      border-color: #4a90e2;
+      transform: translateY(-2px);
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-text small {
+      font-size: 0.65rem;
+      color: #a0aec0;
+      line-height: 1.2;
+    }
+
+    .badge-text strong {
+      font-size: 0.9rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .footer-heading {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a i {
+      font-size: 0.8rem;
+      color: #4a90e2;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .footer-newsletter {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-title {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .newsletter-text {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 60px 0 0 60px;
+      background: rgba(255,255,255,0.02);
+      color: white;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .newsletter-input::placeholder {
+      color: #4a5568;
+    }
+
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border: none;
+      border-radius: 0 60px 60px 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover {
+      transform: translateX(3px);
+      box-shadow: -5px 0 20px rgba(74,144,226,0.3);
+    }
+
+    .newsletter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .newsletter-checkbox input {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #4a90e2;
+    }
+
+    .newsletter-checkbox label {
+      color: #a0aec0;
+      font-size: 0.8rem;
+    }
+
+    .language-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.03);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .language-selector i {
+      color: #4a90e2;
+      font-size: 1.2rem;
+    }
+
+    .language-select {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .language-select option {
+      background: #0b0f17;
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .copyright {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .copyright i {
+      color: #ff6b6b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #718096;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #4a90e2;
+    }
+
+    /* responsive */
+    @media (max-width: 992px) {
+      .community-page-title {
+        font-size: 3rem;
+      }
+      
+      .forum-categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .exchange-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .event-card {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .event-meta {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .community-page-header {
+        padding: 140px 0 60px;
+      }
+      
+      .community-page-title {
+        font-size: 2.5rem;
+      }
+      
+      .community-page-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .community-stats-mini {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+      
+      .community-stats-mini .stat-number {
+        font-size: 2rem;
+      }
+      
+      .forum-categories {
+        grid-template-columns: 1fr;
+      }
+      
+      .exchange-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .forum-post {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .post-stats {
+        justify-content: center;
+      }
+      
+      .cta-content h2 {
+        font-size: 2rem;
+      }
+      
+      .footer-description {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .community-page-title {
+        font-size: 2rem;
+      }
+      
+      .community-stats-mini .stat-number {
+        font-size: 1.5rem;
+      }
+      
+      .event-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .post-meta {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      
+      .btn-cta-community {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== REFINED NAVBAR (same as main site) ===== -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-premium" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-chat-dots-fill me-2" style="color: #4a6fa5;"></i>
+      lingualume
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="box-shadow: none;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="method.html">Method</a></li>
+        <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link active" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="register.html" class="btn btn-nav-cta"><i class="bi bi-person-check me-2"></i>Start free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== COMMUNITY PAGE HEADER ===== -->
+<section class="community-page-header">
+  <div class="container community-header-content">
+    <div class="row">
+      <div class="col-lg-10" data-aos="fade-up">
+        <span class="community-badge-large"><i class="bi bi-people-fill me-2"></i>Global Community · 80k+ Learners</span>
+        <h1 class="community-page-title">You're not alone —<br><span class="gradient-text">we're all learning together</span></h1>
+        <p class="community-page-subtitle">Join conversations, attend events, find language partners, and celebrate progress with learners from around the world.</p>
+        
+        <div class="community-stats-mini">
+          <div class="stat-item">
+            <div class="stat-number">80k+</div>
+            <div class="stat-label">Members</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">120+</div>
+            <div class="stat-label">Countries</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">450</div>
+            <div class="stat-label">Events/year</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== HIGHLIGHTS SECTION ===== -->
+<section class="highlights-section">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="bi bi-chat-dots"></i>
+          </div>
+          <h3>Discussion Forums</h3>
+          <p>Ask questions, share resources, and connect with learners studying the same language as you.</p>
+          <a href="#" class="highlight-link">Join the conversation <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="bi bi-calendar-event"></i>
+          </div>
+          <h3>Live Events</h3>
+          <p>Weekly language cafes, culture nights, and workshops with teachers and native speakers.</p>
+          <a href="#" class="highlight-link">See upcoming events <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="highlight-card">
+          <div class="highlight-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3>Language Exchange</h3>
+          <p>Find partners to practice with — you teach your language, they teach theirs.</p>
+          <a href="#" class="highlight-link">Find a partner <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EVENTS SECTION ===== -->
+<section class="events-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-calendar-week"></i>Upcoming Events</span>
+      <h2 class="section-title">Learn together, <span class="gradient-text">live</span></h2>
+      <p class="section-subtitle">Join free events every week — practice speaking, ask teachers, and meet learners.</p>
+    </div>
+
+    <div class="events-list">
+      <!-- Event 1 -->
+      <div class="event-card" data-aos="fade-up">
+        <div class="event-date">
+          <div class="day">15</div>
+          <div class="month">Mar</div>
+        </div>
+        <div class="event-details">
+          <h4>Spanish Conversation Cafe</h4>
+          <div class="event-meta">
+            <span><i class="bi bi-clock"></i> 7:00 PM EST</span>
+            <span><i class="bi bi-person"></i> Hosted by Elena R.</span>
+          </div>
+        </div>
+        <div class="event-attendees">
+          <i class="bi bi-people"></i> 24 attending
+        </div>
+        <a href="#" class="btn-event">Join</a>
+      </div>
+
+      <!-- Event 2 -->
+      <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="event-date">
+          <div class="day">17</div>
+          <div class="month">Mar</div>
+        </div>
+        <div class="event-details">
+          <h4>French Pronunciation Workshop</h4>
+          <div class="event-meta">
+            <span><i class="bi bi-clock"></i> 6:30 PM EST</span>
+            <span><i class="bi bi-person"></i> Hosted by Sophie D.</span>
+          </div>
+        </div>
+        <div class="event-attendees">
+          <i class="bi bi-people"></i> 18 attending
+        </div>
+        <a href="#" class="btn-event">Join</a>
+      </div>
+
+      <!-- Event 3 -->
+      <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="event-date">
+          <div class="day">20</div>
+          <div class="month">Mar</div>
+        </div>
+        <div class="event-details">
+          <h4>Japanese Culture Night: Cherry Blossoms</h4>
+          <div class="event-meta">
+            <span><i class="bi bi-clock"></i> 8:00 PM EST</span>
+            <span><i class="bi bi-person"></i> Hosted by Kenji T.</span>
+          </div>
+        </div>
+        <div class="event-attendees">
+          <i class="bi bi-people"></i> 42 attending
+        </div>
+        <a href="#" class="btn-event">Join</a>
+      </div>
+
+      <!-- Event 4 -->
+      <div class="event-card" data-aos="fade-up" data-aos-delay="300">
+        <div class="event-date">
+          <div class="day">22</div>
+          <div class="month">Mar</div>
+        </div>
+        <div class="event-details">
+          <h4>German Business Language Q&A</h4>
+          <div class="event-meta">
+            <span><i class="bi bi-clock"></i> 12:00 PM EST</span>
+            <span><i class="bi bi-person"></i> Hosted by Maria S.</span>
+          </div>
+        </div>
+        <div class="event-attendees">
+          <i class="bi bi-people"></i> 15 attending
+        </div>
+        <a href="#" class="btn-event">Join</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn btn-outline-primary" style="padding: 1rem 3rem; border-radius: 60px;">View all events</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FORUM PREVIEW SECTION ===== -->
+<section class="forum-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-chat-square-text"></i>Discussion Forums</span>
+      <h2 class="section-title">Popular <span class="gradient-text">conversations</span></h2>
+      <p class="section-subtitle">Join thousands of discussions about language learning.</p>
+    </div>
+
+    <div class="forum-categories">
+      <div class="forum-category" data-aos="fade-up" data-aos-delay="50">
+        <div class="category-icon">
+          <i class="bi bi-flag"></i>
+        </div>
+        <h4>Spanish</h4>
+        <p>2.4k topics</p>
+        <span class="topic-count">1.2k active</span>
+      </div>
+      <div class="forum-category" data-aos="fade-up" data-aos-delay="100">
+        <div class="category-icon">
+          <i class="bi bi-flag"></i>
+        </div>
+        <h4>French</h4>
+        <p>1.8k topics</p>
+        <span class="topic-count">890 active</span>
+      </div>
+      <div class="forum-category" data-aos="fade-up" data-aos-delay="150">
+        <div class="category-icon">
+          <i class="bi bi-flag"></i>
+        </div>
+        <h4>Japanese</h4>
+        <p>2.1k topics</p>
+        <span class="topic-count">1.5k active</span>
+      </div>
+      <div class="forum-category" data-aos="fade-up" data-aos-delay="200">
+        <div class="category-icon">
+          <i class="bi bi-flag"></i>
+        </div>
+        <h4>German</h4>
+        <p>1.2k topics</p>
+        <span class="topic-count">540 active</span>
+      </div>
+    </div>
+
+    <div class="forum-posts">
+      <!-- Post 1 -->
+      <div class="forum-post" data-aos="fade-up">
+        <div class="post-avatar">
+          <img src="https://images.unsplash.com/photo-1494790108755-27193f48fb76?q=80&w=1974&auto=format&fit=crop" alt="User">
+        </div>
+        <div class="post-content">
+          <a href="#" class="post-title">Tips for rolling your R's in Spanish?</a>
+          <div class="post-meta">
+            <span>by Maria G. · 2 hours ago</span>
+          </div>
+        </div>
+        <div class="post-stats">
+          <span><i class="bi bi-chat"></i> 24 replies</span>
+          <span><i class="bi bi-eye"></i> 156 views</span>
+        </div>
+      </div>
+
+      <!-- Post 2 -->
+      <div class="forum-post" data-aos="fade-up" data-aos-delay="50">
+        <div class="post-avatar">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1974&auto=format&fit=crop" alt="User">
+        </div>
+        <div class="post-content">
+          <a href="#" class="post-title">Best resources for learning Kanji?</a>
+          <div class="post-meta">
+            <span>by James C. · yesterday</span>
+          </div>
+        </div>
+        <div class="post-stats">
+          <span><i class="bi bi-chat"></i> 42 replies</span>
+          <span><i class="bi bi-eye"></i> 312 views</span>
+        </div>
+      </div>
+
+      <!-- Post 3 -->
+      <div class="forum-post" data-aos="fade-up" data-aos-delay="100">
+        <div class="post-avatar">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop" alt="User">
+        </div>
+        <div class="post-content">
+          <a href="#" class="post-title">How to understand fast spoken French?</a>
+          <div class="post-meta">
+            <span>by Sophie L. · 3 days ago</span>
+          </div>
+        </div>
+        <div class="post-stats">
+          <span><i class="bi bi-chat"></i> 38 replies</span>
+          <span><i class="bi bi-eye"></i> 289 views</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn btn-outline-primary" style="padding: 1rem 3rem; border-radius: 60px;">Browse all forums</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LANGUAGE EXCHANGE SECTION ===== -->
+<section class="exchange-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-arrow-left-right"></i>Language Exchange</span>
+      <h2 class="section-title">Find your <span class="gradient-text">language partner</span></h2>
+      <p class="section-subtitle">Teach your language, learn theirs — it's free and fun.</p>
+    </div>
+
+    <div class="exchange-grid">
+      <div class="exchange-card" data-aos="fade-up" data-aos-delay="50">
+        <div class="exchange-flags">
+          <span>🇺🇸</span>
+          <i class="bi bi-arrow-left-right"></i>
+          <span>🇪🇸</span>
+        </div>
+        <h4>Sarah (English) ↔ Carlos (Spanish)</h4>
+        <p>Looking for weekly conversation practice. Intermediate Spanish, can help with English.</p>
+        <a href="#" class="btn-exchange">Connect</a>
+      </div>
+
+      <div class="exchange-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="exchange-flags">
+          <span>🇬🇧</span>
+          <i class="bi bi-arrow-left-right"></i>
+          <span>🇯🇵</span>
+        </div>
+        <h4>Mike (English) ↔ Yuki (Japanese)</h4>
+        <p>JLPT N5 learner looking for Japanese partner. Can help with business English.</p>
+        <a href="#" class="btn-exchange">Connect</a>
+      </div>
+
+      <div class="exchange-card" data-aos="fade-up" data-aos-delay="150">
+        <div class="exchange-flags">
+          <span>🇫🇷</span>
+          <i class="bi bi-arrow-left-right"></i>
+          <span>🇩🇪</span>
+        </div>
+        <h4>Pierre (French) ↔ Anna (German)</h4>
+        <p>Native French speaker, learning German B1. Love talking about culture and travel.</p>
+        <a href="#" class="btn-exchange">Connect</a>
+      </div>
+    </div>
+
+    <div class="text-center mt-5" data-aos="fade-up">
+      <a href="#" class="btn btn-outline-primary" style="padding: 1rem 3rem; border-radius: 60px;">Find more partners</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS SECTION ===== -->
+<section class="achievements-section">
+  <div class="container">
+    <div class="section-header" data-aos="fade-up">
+      <span class="section-badge"><i class="bi bi-trophy"></i>Community Milestones</span>
+      <h2 class="section-title">Celebrating <span class="gradient-text">together</span></h2>
+      <p class="section-subtitle">Every milestone, big or small — we cheer each other on.</p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="50">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="bi bi-star"></i>
+          </div>
+          <h4>12,450</h4>
+          <p>Fluent graduates</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="bi bi-chat"></i>
+          </div>
+          <h4>85k</h4>
+          <p>Forum posts</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="150">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="bi bi-calendar-check"></i>
+          </div>
+          <h4>450+</h4>
+          <p>Events hosted</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="achievement-card">
+          <div class="achievement-icon">
+            <i class="bi bi-people"></i>
+          </div>
+          <h4>24</h4>
+          <p>Language communities</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA SECTION ===== -->
+<section class="community-cta-section">
+  <div class="container">
+    <div class="cta-content" data-aos="fade-up">
+      <h2>Become part of<br><span class="gradient-text">something bigger</span></h2>
+      <p>Join 80,000+ learners from around the world. Share, learn, and grow together.</p>
+      <a href="register.html" class="btn-cta-community"><i class="bi bi-people-fill me-2"></i>Join the community free</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER SECTION (same as main site) ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- Main footer content -->
+    <div class="footer-main">
+      <div class="row g-5">
+        <!-- Column 1: Brand & social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="bi bi-chat-dots-fill footer-logo-icon"></i>
+            <span class="footer-logo-text">lingualume</span>
+          </div>
+          <p class="footer-description">Learn languages naturally with AI-powered coaching, live conversation sessions, and a global community of learners and teachers.</p>
+          
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          
+          <!-- App store badges -->
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <i class="bi bi-apple"></i>
+              <div class="badge-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-badge">
+              <i class="bi bi-google-play"></i>
+              <div class="badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html"><i class="bi bi-chevron-right"></i> All languages</a></li>
+            <li><a href="method.html"><i class="bi bi-chevron-right"></i> How it works</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Free trial</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: For teachers -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Teach</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Become an instructor</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teaching resources</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Earnings potential</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Help center</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Accessibility</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> System status</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Privacy policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Cookie policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Data processing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> GDPR compliance</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Responsible disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <div class="footer-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <h4 class="newsletter-title">Stay in the loop</h4>
+          <p class="newsletter-text">Get language tips, new course alerts, and exclusive offers.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+            <div class="newsletter-checkbox">
+              <input type="checkbox" id="newsletterConsent">
+              <label for="newsletterConsent">I agree to receive marketing emails. Unsubscribe anytime.</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 text-lg-end">
+          <div class="language-selector">
+            <i class="bi bi-globe2"></i>
+            <select class="language-select">
+              <option>English</option>
+              <option>Español</option>
+              <option>Français</option>
+              <option>Deutsch</option>
+              <option>Italiano</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>中文</option>
+              <option>한국어</option>
+              <option>العربية</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with copyright -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">© 2026 LinguaLume, Inc. All rights reserved. Made with <i class="bi bi-heart-fill" style="color: #ff6b6b;"></i> for language lovers.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 50, duration: 900 });
+
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

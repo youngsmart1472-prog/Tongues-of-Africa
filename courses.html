@@ -1,0 +1,1603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Languages · LinguaFlow</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    /* ===== GLOBAL STYLES (from your main site) ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #faf9f6;
+      overflow-x: hidden;
+    }
+
+    /* ===== PREMIUM NAVIGATION (same as main site) ===== */
+    .navbar-premium {
+      background: rgba(255, 255, 255, 0.72) !important;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+      padding: 1rem 0;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-premium.scrolled {
+      background: rgba(255, 255, 255, 0.92) !important;
+      box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-premium .navbar-brand {
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .navbar-premium .nav-link {
+      color: #1e2b38 !important;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0 1rem;
+      padding: 0.5rem 0 !important;
+      position: relative;
+      transition: 0.2s;
+    }
+
+    .navbar-premium .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2.5px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      transition: width 0.25s ease;
+    }
+
+    .navbar-premium .nav-link:hover::after,
+    .navbar-premium .nav-link.active::after {
+      width: 100%;
+    }
+
+    .navbar-premium .nav-link.active {
+      font-weight: 600;
+      color: #2b4c6f !important;
+    }
+
+    .btn-nav-cta {
+      background: linear-gradient(135deg, #1e2b38, #2c3e50);
+      color: white !important;
+      border-radius: 40px;
+      padding: 0.6rem 1.8rem !important;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+      border: none;
+      box-shadow: 0 10px 20px -8px rgba(0,40,80,0.3);
+      transition: all 0.25s;
+    }
+
+    .btn-nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 25px -8px rgba(0,40,80,0.4);
+      background: linear-gradient(135deg, #243746, #334b61);
+    }
+
+    /* ===== COURSES PAGE SPECIFIC STYLES ===== */
+    .courses-page-header {
+      background: linear-gradient(135deg, #f8faff 0%, #f0f4fa 100%);
+      padding: 140px 0 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .courses-page-header::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      right: -150px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(74,144,226,0.05) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .page-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #1a2e3f;
+    }
+
+    .page-title .gradient-text {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #4a5568;
+      max-width: 700px;
+      margin-bottom: 2rem;
+    }
+
+    /* search and filter bar */
+    .search-filter-bar {
+      background: white;
+      border-radius: 80px;
+      padding: 0.5rem;
+      box-shadow: 0 20px 40px -15px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 2rem auto 0;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    .search-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .search-input-group i {
+      color: #a0aec0;
+      font-size: 1.2rem;
+      padding-left: 1rem;
+    }
+
+    .search-input {
+      flex: 1;
+      border: none;
+      padding: 1rem 0.5rem;
+      font-size: 1rem;
+      background: transparent;
+      outline: none;
+    }
+
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1.5rem;
+      border-left: 2px solid #edf2f7;
+    }
+
+    .filter-select {
+      border: none;
+      background: transparent;
+      font-weight: 500;
+      color: #1a2e3f;
+      outline: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .search-btn {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border: none;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      transition: all 0.25s;
+    }
+
+    .search-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 25px -8px rgba(74,144,226,0.4);
+    }
+
+    /* language categories */
+    .categories-section {
+      padding: 40px 0 20px;
+    }
+
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .category-pill {
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      background: white;
+      color: #4a5568;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+
+    .category-pill:hover,
+    .category-pill.active {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    /* languages grid */
+    .languages-section {
+      padding: 40px 0 80px;
+      background: white;
+    }
+
+    .section-header {
+      margin-bottom: 3rem;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a2e3f;
+      margin-bottom: 0.5rem;
+    }
+
+    .section-header p {
+      color: #718096;
+    }
+
+    /* language card (enhanced from homepage) */
+    .language-card {
+      background: white;
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05);
+      transition: all 0.3s ease;
+      margin-bottom: 30px;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+      height: 100%;
+      cursor: pointer;
+      position: relative;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .language-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 50px -15px rgba(74, 144, 226, 0.3);
+      border-color: rgba(74, 144, 226, 0.2);
+    }
+
+    .card-image-wrapper {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .language-card:hover .card-image-wrapper img {
+      transform: scale(1.1);
+    }
+
+    .card-content {
+      padding: 1.8rem 1.5rem 1.5rem;
+      position: relative;
+    }
+
+    .language-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+      color: #1a2e3f;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .language-name span {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      font-size: 0.75rem;
+      padding: 0.25rem 1rem;
+      border-radius: 30px;
+      font-weight: 500;
+    }
+
+    .native-name {
+      font-size: 1rem;
+      color: #a0aec0;
+      margin-bottom: 1rem;
+      font-weight: 400;
+    }
+
+    .language-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+      color: #718096;
+    }
+
+    .language-meta i {
+      color: #4a90e2;
+      margin-right: 0.3rem;
+    }
+
+    .level-indicator {
+      margin-bottom: 1.2rem;
+    }
+
+    .level-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #4a5568;
+      margin-bottom: 0.3rem;
+    }
+
+    .level-bar {
+      height: 6px;
+      background: #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .level-bar-fill {
+      height: 100%;
+      width: 75%;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      border-radius: 6px;
+    }
+
+    .card-footer-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #edf2f7;
+    }
+
+    .lesson-count {
+      font-size: 0.9rem;
+      color: #718096;
+    }
+
+    .lesson-count i {
+      margin-right: 0.35rem;
+      color: #4a90e2;
+    }
+
+    .start-learning {
+      color: #4a90e2;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: gap 0.2s;
+    }
+
+    .language-card:hover .start-learning {
+      gap: 0.7rem;
+    }
+
+    /* featured languages banner */
+    .featured-banner {
+      background: linear-gradient(135deg, #1a2e3f, #2b4c6f);
+      border-radius: 50px;
+      padding: 3rem;
+      margin: 3rem 0;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured-banner::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .featured-banner h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .featured-banner p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 70%;
+    }
+
+    .btn-featured {
+      background: white;
+      color: #1a2e3f;
+      padding: 1rem 2.5rem;
+      border-radius: 60px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.25s;
+    }
+
+    .btn-featured:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+    }
+
+    /* pagination */
+    .pagination {
+      margin-top: 3rem;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .page-link {
+      border: none;
+      padding: 0.8rem 1.2rem;
+      border-radius: 12px;
+      color: #4a5568;
+      font-weight: 500;
+      background: white;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+    }
+
+    .page-link.active {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+    }
+
+    .page-link:hover {
+      background: #4a90e2;
+      color: white;
+    }
+
+    /* ===== FOOTER SECTION (same as main site) ===== */
+    .footer-section {
+      background: #0b0f17;
+      color: #e2e8f0;
+      padding: 80px 0 30px;
+      position: relative;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-section::before {
+      content: '';
+      position: absolute;
+      top: -200px;
+      right: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(74,144,226,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-section::after {
+      content: '';
+      position: absolute;
+      bottom: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(123,104,238,0.02) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .footer-main {
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo-icon {
+      font-size: 2.5rem;
+      color: #4a90e2;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-logo-text {
+      font-size: 2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-description {
+      color: #a0aec0;
+      line-height: 1.7;
+      margin-bottom: 1.8rem;
+      font-size: 0.95rem;
+      max-width: 90%;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #a0aec0;
+      font-size: 1.2rem;
+      transition: all 0.25s;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .social-link:hover {
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      transform: translateY(-3px);
+      border-color: transparent;
+      box-shadow: 0 10px 20px -8px rgba(74,144,226,0.4);
+    }
+
+    .app-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .app-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      text-decoration: none;
+      color: white;
+      transition: all 0.25s;
+    }
+
+    .app-badge i {
+      font-size: 1.6rem;
+      color: #4a90e2;
+    }
+
+    .app-badge:hover {
+      background: rgba(74,144,226,0.1);
+      border-color: #4a90e2;
+      transform: translateY(-2px);
+    }
+
+    .badge-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .badge-text small {
+      font-size: 0.65rem;
+      color: #a0aec0;
+      line-height: 1.2;
+    }
+
+    .badge-text strong {
+      font-size: 0.9rem;
+      color: white;
+      line-height: 1.2;
+    }
+
+    .footer-heading {
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 1.8rem;
+      letter-spacing: 0.3px;
+      position: relative;
+      padding-bottom: 0.8rem;
+    }
+
+    .footer-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, #4a90e2, #7b68ee);
+      border-radius: 3px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.9rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .footer-links a i {
+      font-size: 0.8rem;
+      color: #4a90e2;
+      opacity: 0.5;
+      transition: opacity 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .footer-links a:hover i {
+      opacity: 1;
+    }
+
+    .footer-newsletter {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      margin-bottom: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .newsletter-title {
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+
+    .newsletter-text {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .newsletter-form {
+      max-width: 500px;
+    }
+
+    .input-group {
+      display: flex;
+      margin-bottom: 0.8rem;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      padding: 1rem 1.2rem;
+      border: 2px solid rgba(255,255,255,0.1);
+      border-radius: 60px 0 0 60px;
+      background: rgba(255,255,255,0.02);
+      color: white;
+      font-size: 0.95rem;
+      transition: all 0.25s;
+    }
+
+    .newsletter-input:focus {
+      outline: none;
+      border-color: #4a90e2;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .newsletter-input::placeholder {
+      color: #4a5568;
+    }
+
+    .newsletter-btn {
+      padding: 1rem 2rem;
+      background: linear-gradient(135deg, #4a90e2, #7b68ee);
+      color: white;
+      border: none;
+      border-radius: 0 60px 60px 0;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s;
+      white-space: nowrap;
+    }
+
+    .newsletter-btn:hover {
+      transform: translateX(3px);
+      box-shadow: -5px 0 20px rgba(74,144,226,0.3);
+    }
+
+    .newsletter-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .newsletter-checkbox input {
+      width: 1rem;
+      height: 1rem;
+      accent-color: #4a90e2;
+    }
+
+    .newsletter-checkbox label {
+      color: #a0aec0;
+      font-size: 0.8rem;
+    }
+
+    .language-selector {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: rgba(255,255,255,0.03);
+      padding: 0.8rem 1.5rem;
+      border-radius: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .language-selector i {
+      color: #4a90e2;
+      font-size: 1.2rem;
+    }
+
+    .language-select {
+      background: transparent;
+      border: none;
+      color: white;
+      font-size: 0.95rem;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .language-select option {
+      background: #0b0f17;
+      color: white;
+    }
+
+    .footer-bottom {
+      padding-top: 30px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .copyright {
+      color: #718096;
+      font-size: 0.9rem;
+      margin-bottom: 0;
+    }
+
+    .copyright i {
+      color: #ff6b6b;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 2rem;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .footer-bottom-links a {
+      color: #718096;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: #4a90e2;
+    }
+
+    /* responsive */
+    @media (max-width: 992px) {
+      .page-title {
+        font-size: 2.8rem;
+      }
+      
+      .search-filter-bar {
+        border-radius: 40px;
+      }
+      
+      .filter-dropdown {
+        border-left: none;
+        border-top: 2px solid #edf2f7;
+        padding: 1rem 0;
+        width: 100%;
+      }
+      
+      .featured-banner p {
+        max-width: 100%;
+      }
+      
+      .footer-description {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .courses-page-header {
+        padding: 120px 0 40px;
+      }
+      
+      .page-title {
+        font-size: 2.2rem;
+      }
+      
+      .search-filter-bar {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+      
+      .search-input-group {
+        background: white;
+        border-radius: 60px;
+        margin-bottom: 1rem;
+      }
+      
+      .search-btn {
+        width: 100%;
+      }
+      
+      .category-pills {
+        gap: 0.5rem;
+      }
+      
+      .category-pill {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+      }
+      
+      .featured-banner {
+        padding: 2rem;
+      }
+      
+      .featured-banner h3 {
+        font-size: 1.6rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .page-title {
+        font-size: 1.8rem;
+      }
+      
+      .language-name {
+        font-size: 1.3rem;
+      }
+      
+      .featured-banner {
+        border-radius: 30px;
+      }
+      
+      .btn-featured {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== REFINED NAVBAR (same as main site) ===== -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-premium" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="index.html">
+      <i class="bi bi-chat-dots-fill me-2" style="color: #4a6fa5;"></i>
+      lingualume
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="box-shadow: none;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="courses.html">Courses</a></li>
+        <li class="nav-item"><a class="nav-link" href="method.html">Method</a></li>
+        <li class="nav-item"><a class="nav-link" href="teachers.html">Teachers</a></li>
+        <li class="nav-item"><a class="nav-link" href="community.html">Community</a></li>
+      </ul>
+      <div class="d-flex">
+        <a href="#" class="btn btn-nav-cta"><i class="bi bi-person-check me-2"></i>Start free</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== COURSES PAGE HEADER ===== -->
+<section class="courses-page-header">
+  <div class="container text-center">
+    <h1 class="page-title" data-aos="fade-up">Explore <span class="gradient-text">21 languages</span></h1>
+    <p class="page-subtitle mx-auto" data-aos="fade-up" data-aos-delay="100">From beginner to fluent — find the language that opens your world.</p>
+    
+    <!-- Search and filter bar -->
+    <div class="search-filter-bar" data-aos="fade-up" data-aos-delay="200">
+      <div class="row g-0 align-items-center">
+        <div class="col-lg-7">
+          <div class="search-input-group">
+            <i class="bi bi-search"></i>
+            <input type="text" class="search-input" placeholder="Search for a language...">
+          </div>
+        </div>
+        <div class="col-lg-3">
+          <div class="filter-dropdown">
+            <i class="bi bi-funnel"></i>
+            <select class="filter-select">
+              <option>All levels</option>
+              <option>Beginner (A1-A2)</option>
+              <option>Intermediate (B1-B2)</option>
+              <option>Advanced (C1-C2)</option>
+              <option>Business</option>
+              <option>Travel</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <button class="search-btn w-100">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LANGUAGE CATEGORIES ===== -->
+<section class="categories-section">
+  <div class="container">
+    <div class="category-pills" data-aos="fade-up">
+      <a href="#" class="category-pill active">All languages</a>
+      <a href="#" class="category-pill">Most popular</a>
+      <a href="#" class="category-pill">European</a>
+      <a href="#" class="category-pill">Asian</a>
+      <a href="#" class="category-pill">Romance</a>
+      <a href="#" class="category-pill">Germanic</a>
+      <a href="#" class="category-pill">Slavic</a>
+      <a href="#" class="category-pill">Middle Eastern</a>
+      <a href="#" class="category-pill">For business</a>
+      <a href="#" class="category-pill">For travel</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LANGUAGES GRID ===== -->
+<section class="languages-section">
+  <div class="container">
+    <!-- Featured banner -->
+    <div class="featured-banner" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h3>🌟 Limited time: Learn any 2 languages</h3>
+          <p>Get 40% off when you enroll in two languages. Perfect for bilingual dreamers.</p>
+        </div>
+        <div class="col-lg-4 text-lg-end">
+          <a href="#" class="btn-featured"><i class="bi bi-gem me-2"></i>Claim offer</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular languages section -->
+    <div class="section-header" data-aos="fade-up">
+      <h2>Most popular</h2>
+      <p>Join thousands of learners studying these languages</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- English -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1533929736458-ca588d08c8be?q=80&w=2070&auto=format&fit=crop" alt="English">
+          </div>
+          <div class="card-content">
+            <div class="language-name">English <span>🇬🇧</span></div>
+            <div class="native-name">Global communication</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 15k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.9</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>Beginner to Fluent</span>
+                <span>124 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 80 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Spanish -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1543783207-ec64e4d95325?q=80&w=2070&auto=format&fit=crop" alt="Spanish">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Español <span>🇪🇸</span></div>
+            <div class="native-name">Spanish · 20 countries</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 12k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.9</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - C2</span>
+                <span>156 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 95 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- French -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?q=80&w=2073&auto=format&fit=crop" alt="French">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Français <span>🇫🇷</span></div>
+            <div class="native-name">French · Romance</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 10k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.8</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - C1</span>
+                <span>142 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 88 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- German -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?q=80&w=2070&auto=format&fit=crop" alt="German">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Deutsch <span>🇩🇪</span></div>
+            <div class="native-name">German · Business</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 8k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.8</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - B2</span>
+                <span>118 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 72 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Asian languages section -->
+    <div class="section-header mt-5" data-aos="fade-up">
+      <h2>Asian languages</h2>
+      <p>Unlock East Asia's business and culture</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Japanese -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?q=80&w=2070&auto=format&fit=crop" alt="Japanese">
+          </div>
+          <div class="card-content">
+            <div class="language-name">日本語 <span>🇯🇵</span></div>
+            <div class="native-name">Japanese · Kanji</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 7k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.9</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>N5 - N1</span>
+                <span>168 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 110 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Mandarin -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1508804185872-d7badad00f7d?q=80&w=2070&auto=format&fit=crop" alt="Mandarin">
+          </div>
+          <div class="card-content">
+            <div class="language-name">中文 <span>🇨🇳</span></div>
+            <div class="native-name">Mandarin · Tones</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 6k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.8</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>HSK 1-6</span>
+                <span>192 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 125 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Korean -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1517154421773-0529f29ea451?q=80&w=2070&auto=format&fit=crop" alt="Korean">
+          </div>
+          <div class="card-content">
+            <div class="language-name">한국어 <span>🇰🇷</span></div>
+            <div class="native-name">Korean · Hangul</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 5k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.9</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>TOPIK 1-6</span>
+                <span>156 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 100%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 100 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Vietnamese -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop" alt="Vietnamese">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Tiếng Việt <span>🇻🇳</span></div>
+            <div class="native-name">Vietnamese · Tones</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 2k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.7</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - B1</span>
+                <span>98 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 65 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- European languages section -->
+    <div class="section-header mt-5" data-aos="fade-up">
+      <h2>European languages</h2>
+      <p>Travel, work, or connect with your heritage</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Italian -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="50">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?q=80&w=2080&auto=format&fit=crop" alt="Italian">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Italiano <span>🇮🇹</span></div>
+            <div class="native-name">Italian · Culture</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 6k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.8</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - C1</span>
+                <span>132 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 90%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 82 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Portuguese -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1483729557573-9b83e8f2c6cc?q=80&w=2070&auto=format&fit=crop" alt="Portuguese">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Português <span>🇵🇹</span></div>
+            <div class="native-name">Portuguese · Brazil/EU</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 4k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.8</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - B2</span>
+                <span>128 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 78 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Russian -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1513326738677-b964603b136d?q=80&w=2070&auto=format&fit=crop" alt="Russian">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Русский <span>🇷🇺</span></div>
+            <div class="native-name">Russian · Cyrillic</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 3k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.7</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - B1</span>
+                <span>114 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 70 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Dutch -->
+      <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+        <a href="#" class="language-card">
+          <div class="card-image-wrapper">
+            <img src="https://images.unsplash.com/photo-1512470876302-972faa2aa9a4?q=80&w=2070&auto=format&fit=crop" alt="Dutch">
+          </div>
+          <div class="card-content">
+            <div class="language-name">Nederlands <span>🇳🇱</span></div>
+            <div class="native-name">Dutch · Lowlands</div>
+            <div class="language-meta">
+              <span><i class="bi bi-people"></i> 2k+ learners</span>
+              <span><i class="bi bi-star-fill" style="color: #fbbf24;"></i> 4.7</span>
+            </div>
+            <div class="level-indicator">
+              <div class="level-label">
+                <span>A1 - B1</span>
+                <span>98 lessons</span>
+              </div>
+              <div class="level-bar">
+                <div class="level-bar-fill" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="card-footer-info">
+              <span class="lesson-count"><i class="bi bi-clock"></i> 62 hours</span>
+              <span class="start-learning">Start learning <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <nav class="pagination" data-aos="fade-up">
+      <a href="#" class="page-link active">1</a>
+      <a href="#" class="page-link">2</a>
+      <a href="#" class="page-link">3</a>
+      <a href="#" class="page-link">4</a>
+      <a href="#" class="page-link">5</a>
+      <a href="#" class="page-link">...</a>
+      <a href="#" class="page-link">Next</a>
+    </nav>
+  </div>
+</section>
+
+<!-- ===== FOOTER SECTION (same as main site) ===== -->
+<footer class="footer-section">
+  <div class="container">
+    <!-- Main footer content -->
+    <div class="footer-main">
+      <div class="row g-5">
+        <!-- Column 1: Brand & social -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <i class="bi bi-chat-dots-fill footer-logo-icon"></i>
+            <span class="footer-logo-text">lingualume</span>
+          </div>
+          <p class="footer-description">Learn languages naturally with AI-powered coaching, live conversation sessions, and a global community of learners and teachers.</p>
+          
+          <!-- Social links -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="#" class="social-link" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          </div>
+          
+          <!-- App store badges -->
+          <div class="app-badges">
+            <a href="#" class="app-badge">
+              <i class="bi bi-apple"></i>
+              <div class="badge-text">
+                <small>Download on the</small>
+                <strong>App Store</strong>
+              </div>
+            </a>
+            <a href="#" class="app-badge">
+              <i class="bi bi-google-play"></i>
+              <div class="badge-text">
+                <small>Get it on</small>
+                <strong>Google Play</strong>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Quick links -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Explore</h4>
+          <ul class="footer-links">
+            <li><a href="courses.html"><i class="bi bi-chevron-right"></i> All languages</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> How it works</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Pricing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Free trial</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: For teachers -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Teach</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Become an instructor</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teaching resources</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Earnings potential</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Success stories</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Teacher login</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Support & legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Help center</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Contact us</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> FAQ</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Community</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Accessibility</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> System status</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Legal -->
+        <div class="col-lg-2 col-md-6">
+          <h4 class="footer-heading">Legal</h4>
+          <ul class="footer-links">
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Privacy policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Terms of service</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Cookie policy</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Data processing</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> GDPR compliance</a></li>
+            <li><a href="#"><i class="bi bi-chevron-right"></i> Responsible disclosure</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Newsletter signup -->
+    <div class="footer-newsletter">
+      <div class="row align-items-center">
+        <div class="col-lg-4">
+          <h4 class="newsletter-title">Stay in the loop</h4>
+          <p class="newsletter-text">Get language tips, new course alerts, and exclusive offers.</p>
+        </div>
+        <div class="col-lg-6">
+          <form class="newsletter-form">
+            <div class="input-group">
+              <input type="email" class="newsletter-input" placeholder="Enter your email" required>
+              <button type="submit" class="newsletter-btn">Subscribe</button>
+            </div>
+            <div class="newsletter-checkbox">
+              <input type="checkbox" id="newsletterConsent">
+              <label for="newsletterConsent">I agree to receive marketing emails. Unsubscribe anytime.</label>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-2 text-lg-end">
+          <div class="language-selector">
+            <i class="bi bi-globe2"></i>
+            <select class="language-select">
+              <option>English</option>
+              <option>Español</option>
+              <option>Français</option>
+              <option>Deutsch</option>
+              <option>Italiano</option>
+              <option>Português</option>
+              <option>日本語</option>
+              <option>中文</option>
+              <option>한국어</option>
+              <option>العربية</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom footer with copyright -->
+    <div class="footer-bottom">
+      <div class="row align-items-center">
+        <div class="col-md-6">
+          <p class="copyright">© 2026 LinguaLume, Inc. All rights reserved. Made with <i class="bi bi-heart-fill" style="color: #ff6b6b;"></i> for language lovers.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+          <div class="footer-bottom-links">
+            <a href="#">Sitemap</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Cookies</a>
+            <a href="#">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({ once: true, offset: 50, duration: 900 });
+
+  window.addEventListener('scroll', function() {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
